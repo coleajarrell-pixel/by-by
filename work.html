@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Work — By &amp; By Productions</title>
+  <meta name="description" content="Brand films, documentaries, commercials, and photography from By & By Productions, Charleston, SC.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">By &amp; By <em>Productions</em><span>Charleston, S.C.</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html" class="active">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-outline">Start a Project</a>
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Our Work</span>
+        <h1>Stories we've helped tell.</h1>
+        <p class="lede">A sample of the brand films, documentaries, commercials, and photography we make for people and places around Charleston and the Lowcountry.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filter-bar reveal">
+          <button class="filter-btn active" data-filter="All">All</button>
+          <button class="filter-btn" data-filter="Brand Film">Brand Film</button>
+          <button class="filter-btn" data-filter="Documentary">Documentary</button>
+          <button class="filter-btn" data-filter="Commercial">Commercial</button>
+          <button class="filter-btn" data-filter="Photography">Photography</button>
+          <button class="filter-btn" data-filter="Events">Events</button>
+        </div>
+        <div class="project-grid" data-project-grid></div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container reveal">
+        <span class="eyebrow">Let's Work Together</span>
+        <h2>See something close to what you have in mind?</h2>
+        <div class="hero-actions" style="justify-content:center; margin-top: 28px;">
+          <a href="contact.html" class="btn btn-primary">Start a Project <span class="btn-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="logo">By &amp; By <em>Productions</em><span>Charleston, S.C.</span></a>
+          <p style="margin-top:16px; font-size:0.9rem;">A Charleston, SC media company crafting brand films, documentaries, commercials, and photography.</p>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Brand Films</a></li>
+            <li><a href="index.html#services">Documentary</a></li>
+            <li><a href="index.html#services">Commercial</a></li>
+            <li><a href="index.html#services">Photography</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@byandbyproductions.com">hello@byandbyproductions.com</a></li>
+            <li><a href="tel:+18435550100">(843) 555-0100</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://vimeo.com" target="_blank" rel="noopener">Vimeo</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year></span> By &amp; By Productions, LLC. Charleston, SC.</span>
+        <span>Site by By &amp; By Productions</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
