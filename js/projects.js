@@ -1,27 +1,33 @@
 /*
-  Sample portfolio data.
+  Portfolio data.
   ------------------------------------------------------------------
-  Everything below is placeholder/template content, not real client
-  work. Replace each entry with your own projects before the site
-  goes live: swap `title`, `client`, `category`, `year`, `description`,
-  and `color` (a CSS gradient stand-in for a thumbnail image or video
-  poster). To use a real image instead of a gradient, set `image` to
-  a path like "assets/work/project-01.jpg" and it will be used
-  automatically.
+  Entries marked "Sample Project" below are placeholder/template
+  content — replace them with real projects before the site goes
+  live. Real entries (no "Sample Project" prefix) are actual client
+  work.
+
+  Fields:
+  - `image`: a path like "assets/work/project-01.jpg" for a photo
+    thumbnail (used if no `video` is set).
+  - `video`: a path like "assets/work/video/clip.mp4" for a video
+    thumbnail — it autoplays muted on hover.
+  - `color`: a CSS gradient placeholder, used only if neither
+    `image` nor `video` is set.
   ------------------------------------------------------------------
 */
 
 const PROJECTS = [
   {
-    id: "p1",
-    title: "Coastal Table",
-    client: "Sample Project — Restaurant Brand Film",
+    id: "biohakd-ad-1",
+    title: "BioHAKD Longevity Lounge",
+    client: "Brand Ad Film",
     category: "Brand Film",
     tag: "Video",
     year: "2026",
-    description: "A short brand film following a Lowcountry kitchen through a single service.",
+    description: "A brand ad for BioHAKD Longevity Lounge, a Charleston-area wellness and longevity studio.",
     featured: true,
-    color: "linear-gradient(150deg, #2a2f22, #12161b 70%)"
+    video: "assets/work/video/biohakd-ad-1.mp4",
+    poster: "assets/work/video/biohakd-ad-1-poster.jpg"
   },
   {
     id: "p2",

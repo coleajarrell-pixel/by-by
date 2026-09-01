@@ -44,12 +44,19 @@ document.querySelectorAll(".reveal").forEach(initReveal);
 
 // ---------- project card renderer ----------
 function projectCardHTML(project) {
-  const thumbStyle = project.image
-    ? `background-image:url('${project.image}');background-size:cover;background-position:center;`
-    : `background:${project.color};`;
+  let thumbHTML;
+  if (project.video) {
+    const posterAttr = project.poster ? ` poster="${project.poster}"` : "";
+    thumbHTML = `<video class="thumb" src="${project.video}"${posterAttr} muted loop playsinline preload="metadata"></video>`;
+  } else {
+    const thumbStyle = project.image
+      ? `background-image:url('${project.image}');background-size:cover;background-position:center;`
+      : `background:${project.color};`;
+    thumbHTML = `<div class="thumb" style="${thumbStyle}"></div>`;
+  }
   return `
     <article class="project-card reveal" data-category="${project.category}">
-      <div class="thumb" style="${thumbStyle}"></div>
+      ${thumbHTML}
       <span class="badge">${project.tag}</span>
       <div class="overlay">
         <span class="tag">${project.category} &middot; ${project.year}</span>
@@ -59,6 +66,21 @@ function projectCardHTML(project) {
     </article>
   `;
 }
+
+// video cards preview on hover (desktop) since browsers block full autoplay
+document.addEventListener("mouseover", (e) => {
+  const card = e.target.closest(".project-card");
+  const video = card && card.querySelector("video.thumb");
+  if (video && video.paused) video.play().catch(() => {});
+});
+document.addEventListener("mouseout", (e) => {
+  const card = e.target.closest(".project-card");
+  const video = card && card.querySelector("video.thumb");
+  if (video && !card.contains(e.relatedTarget)) {
+    video.pause();
+    video.currentTime = 0;
+  }
+});
 
 // ---------- featured work (home page) ----------
 const featuredGrid = document.querySelector("[data-featured-grid]");
