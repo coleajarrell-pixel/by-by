@@ -47,7 +47,9 @@ function projectCardHTML(project) {
   let thumbHTML;
   if (project.video) {
     const posterAttr = project.poster ? ` poster="${project.poster}"` : "";
-    thumbHTML = `<video class="thumb" src="${project.video}"${posterAttr} muted loop playsinline preload="metadata"></video>`;
+    const autoplayAttr = project.autoplay ? " autoplay" : "";
+    const preload = project.autoplay ? "auto" : "metadata";
+    thumbHTML = `<video class="thumb" src="${project.video}"${posterAttr} muted loop playsinline preload="${preload}"${autoplayAttr}></video>`;
   } else {
     const thumbStyle = project.image
       ? `background-image:url('${project.image}');background-size:cover;background-position:center;`
@@ -67,7 +69,8 @@ function projectCardHTML(project) {
   `;
 }
 
-// video cards preview on hover (desktop) since browsers block full autoplay
+// video cards preview on hover (desktop) since browsers block full autoplay.
+// Videos marked autoplay play continuously and are left alone.
 document.addEventListener("mouseover", (e) => {
   const card = e.target.closest(".project-card");
   const video = card && card.querySelector("video.thumb");
@@ -76,7 +79,7 @@ document.addEventListener("mouseover", (e) => {
 document.addEventListener("mouseout", (e) => {
   const card = e.target.closest(".project-card");
   const video = card && card.querySelector("video.thumb");
-  if (video && !card.contains(e.relatedTarget)) {
+  if (video && !video.autoplay && !card.contains(e.relatedTarget)) {
     video.pause();
     video.currentTime = 0;
   }
