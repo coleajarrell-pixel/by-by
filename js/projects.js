@@ -52,6 +52,17 @@ const PROJECTS = [
     image: "assets/work/groovers-charlotte/groovers-charlotte-2.jpg"
   },
   {
+    id: "trio-1",
+    title: "Trio",
+    client: "Event Photography",
+    category: "Events",
+    tag: "Photo",
+    year: "2026",
+    description: "DJ and nightlife event coverage at Trio, a Charleston nightclub.",
+    featured: true,
+    image: "assets/work/trio/trio-2.jpg"
+  },
+  {
     id: "bluedoor-1",
     title: "Blue Door",
     client: "Event Photography",
