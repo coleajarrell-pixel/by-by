@@ -38,7 +38,7 @@ const PROJECTS = [
     year: "2026",
     description: "A 30-second spot built around Charleston waterfront property listings.",
     featured: true,
-    color: "linear-gradient(150deg, #223038, #12161b 70%)"
+    color: "linear-gradient(150deg, #2c3a46, #1a2228 70%)"
   },
   {
     id: "p3",
@@ -49,7 +49,7 @@ const PROJECTS = [
     year: "2025",
     description: "A character-driven documentary short on a Lowcountry sweetgrass basket weaver.",
     featured: true,
-    color: "linear-gradient(150deg, #302722, #12161b 70%)"
+    color: "linear-gradient(150deg, #4a2e1c, #2b1c12 70%)"
   },
   {
     id: "p4",
@@ -60,7 +60,7 @@ const PROJECTS = [
     year: "2025",
     description: "Full-day wedding coverage at a historic downtown Charleston venue.",
     featured: true,
-    color: "linear-gradient(150deg, #332a30, #12161b 70%)"
+    color: "linear-gradient(150deg, #4a3230, #2b1c12 70%)"
   },
   {
     id: "p5",
@@ -71,7 +71,7 @@ const PROJECTS = [
     year: "2025",
     description: "Studio and on-location product photography for a monthly social content package.",
     featured: false,
-    color: "linear-gradient(150deg, #24302a, #12161b 70%)"
+    color: "linear-gradient(150deg, #3d362c, #211c15 70%)"
   },
   {
     id: "p6",
@@ -82,7 +82,7 @@ const PROJECTS = [
     year: "2025",
     description: "A three-part mini series on Lowcountry makers and the craft traditions they carry forward.",
     featured: false,
-    color: "linear-gradient(150deg, #2a2622, #12161b 70%)"
+    color: "linear-gradient(150deg, #423424, #23190f 70%)"
   },
   {
     id: "p7",
@@ -93,7 +93,7 @@ const PROJECTS = [
     year: "2024",
     description: "Launch film for a Charleston bike shop's custom build program.",
     featured: false,
-    color: "linear-gradient(150deg, #222a30, #12161b 70%)"
+    color: "linear-gradient(150deg, #33424c, #1a2228 70%)"
   },
   {
     id: "p8",
@@ -104,7 +104,7 @@ const PROJECTS = [
     year: "2024",
     description: "Drone and handheld coverage for a summer campaign shot on Folly Beach.",
     featured: false,
-    color: "linear-gradient(150deg, #203038, #12161b 70%)"
+    color: "linear-gradient(150deg, #2c4048, #3a2f20 70%)"
   },
   {
     id: "p9",
@@ -115,6 +115,6 @@ const PROJECTS = [
     year: "2024",
     description: "Same-day edit and full gallery for a private garden celebration.",
     featured: false,
-    color: "linear-gradient(150deg, #302230, #12161b 70%)"
+    color: "linear-gradient(150deg, #4a3628, #2b1c12 70%)"
   }
 ];
