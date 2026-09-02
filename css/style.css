@@ -779,9 +779,15 @@ video.project-card .thumb,
   margin-bottom: 0;
 }
 
-.team-grid--solo {
-  grid-template-columns: minmax(0, 280px);
+.team-grid--duo {
+  grid-template-columns: repeat(2, minmax(0, 280px));
   justify-content: center;
+}
+
+@media (max-width: 620px) {
+  .team-grid--duo {
+    grid-template-columns: minmax(0, 280px);
+  }
 }
 
 .credit-line {
