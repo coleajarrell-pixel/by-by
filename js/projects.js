@@ -74,6 +74,50 @@ const PROJECTS = [
     image: "assets/work/bluedoor/bluedoor-1.jpg"
   },
   {
+    id: "trio-2",
+    title: "Trio",
+    client: "Event Photography",
+    category: "Events",
+    tag: "Photo",
+    year: "2026",
+    description: "DJ and nightlife event coverage at Trio, a Charleston nightclub.",
+    featured: false,
+    image: "assets/work/trio/trio-1.jpg"
+  },
+  {
+    id: "trio-3",
+    title: "Trio",
+    client: "Event Photography",
+    category: "Events",
+    tag: "Photo",
+    year: "2026",
+    description: "DJ and nightlife event coverage at Trio, a Charleston nightclub.",
+    featured: false,
+    image: "assets/work/trio/trio-3.jpg"
+  },
+  {
+    id: "bluedoor-2",
+    title: "Blue Door",
+    client: "Vintage Car Photography",
+    category: "Photography",
+    tag: "Photo",
+    year: "2026",
+    description: "A vintage Mustang shoot for Blue Door, a Charleston drink and social bar.",
+    featured: false,
+    image: "assets/work/bluedoor/bluedoor-4.jpg"
+  },
+  {
+    id: "bluedoor-3",
+    title: "Blue Door",
+    client: "Vintage Car Photography",
+    category: "Photography",
+    tag: "Photo",
+    year: "2026",
+    description: "A vintage Mustang shoot for Blue Door, a Charleston drink and social bar.",
+    featured: false,
+    image: "assets/work/bluedoor/bluedoor-3.jpg"
+  },
+  {
     id: "palma-1",
     title: "Palma Day Club",
     client: "Event Photography",
