@@ -30,26 +30,26 @@ const PROJECTS = [
     poster: "assets/work/video/biohakd-ad-1-poster.jpg"
   },
   {
-    id: "trio-1",
-    title: "Trio",
-    client: "Event Photography",
-    category: "Events",
-    tag: "Photo",
-    year: "2026",
-    description: "Nightlife event coverage at Trio, a Charleston nightclub.",
-    featured: true,
-    image: "assets/work/trio/trio-1.jpg"
-  },
-  {
-    id: "groovers-1",
+    id: "groovers-charleston-1",
     title: "Groovers Listening Bar",
-    client: "Event & Lifestyle Photography",
+    client: "Charleston, SC — Event & Lifestyle Photography",
     category: "Photography",
     tag: "Photo",
     year: "2026",
-    description: "Bar and lounge photography at Groovers, a Charleston listening bar.",
+    description: "Bar and lounge photography at Groovers Listening Bar's Charleston location.",
     featured: true,
     image: "assets/work/groovers/groovers-7.jpg"
+  },
+  {
+    id: "groovers-charlotte-1",
+    title: "Groovers Listening Bar (Charlotte)",
+    client: "Charlotte, NC — Nightlife Event Photography",
+    category: "Events",
+    tag: "Photo",
+    year: "2026",
+    description: "Nightlife event coverage at Groovers Listening Bar's Charlotte location.",
+    featured: true,
+    image: "assets/work/groovers-charlotte/groovers-charlotte-2.jpg"
   },
   {
     id: "bluedoor-1",
