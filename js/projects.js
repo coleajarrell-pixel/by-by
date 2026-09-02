@@ -30,48 +30,48 @@ const PROJECTS = [
     poster: "assets/work/video/biohakd-ad-1-poster.jpg"
   },
   {
-    id: "p2",
-    title: "Harbor Views",
-    client: "Sample Project — Real Estate Commercial",
-    category: "Commercial",
-    tag: "Video",
+    id: "trio-1",
+    title: "Trio",
+    client: "Event Photography",
+    category: "Events",
+    tag: "Photo",
     year: "2026",
-    description: "A 30-second spot built around Charleston waterfront property listings.",
+    description: "Nightlife event coverage at Trio, a Charleston nightclub.",
     featured: true,
-    color: "linear-gradient(150deg, #2c3a46, #1a2228 70%)"
+    image: "assets/work/trio/trio-1.jpg"
   },
   {
-    id: "p3",
-    title: "Rivers & Reed",
-    client: "Sample Project — Documentary Short",
-    category: "Documentary",
-    tag: "Video",
-    year: "2025",
-    description: "A character-driven documentary short on a Lowcountry sweetgrass basket weaver.",
-    featured: true,
-    color: "linear-gradient(150deg, #4a2e1c, #2b1c12 70%)"
-  },
-  {
-    id: "p4",
-    title: "Magnolia & Vine",
-    client: "Sample Project — Wedding Photography",
+    id: "groovers-1",
+    title: "Groovers Listening Bar",
+    client: "Event & Lifestyle Photography",
     category: "Photography",
     tag: "Photo",
-    year: "2025",
-    description: "Full-day wedding coverage at a historic downtown Charleston venue.",
+    year: "2026",
+    description: "Bar and lounge photography at Groovers, a Charleston listening bar.",
     featured: true,
-    color: "linear-gradient(150deg, #4a3230, #2b1c12 70%)"
+    image: "assets/work/groovers/groovers-7.jpg"
   },
   {
-    id: "p5",
-    title: "Palmetto Provisions",
-    client: "Sample Project — Product & Social Content",
-    category: "Photography",
+    id: "bluedoor-1",
+    title: "Blue Door",
+    client: "Event Photography",
+    category: "Events",
     tag: "Photo",
-    year: "2025",
-    description: "Studio and on-location product photography for a monthly social content package.",
-    featured: false,
-    color: "linear-gradient(150deg, #3d362c, #211c15 70%)"
+    year: "2026",
+    description: "Lifestyle and event photography at Blue Door, a Charleston drink and social bar.",
+    featured: true,
+    image: "assets/work/bluedoor/bluedoor-1.jpg"
+  },
+  {
+    id: "palma-1",
+    title: "Palma Day Club",
+    client: "Event Photography",
+    category: "Events",
+    tag: "Photo",
+    year: "2026",
+    description: "Poolside day club event coverage for Palma Day Club, Charleston, SC.",
+    featured: true,
+    image: "assets/work/palma/palma-6.jpg"
   },
   {
     id: "p6",

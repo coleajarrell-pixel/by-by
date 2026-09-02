@@ -666,6 +666,38 @@ video.project-card .thumb,
   font-size: 0.9rem;
 }
 
+/* ---------- client logo strip ---------- */
+
+.client-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.client-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 100px;
+  padding: 20px 24px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.client-card--dark {
+  background: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.client-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 /* ---------- testimonial ---------- */
 
 .testimonial-card {
