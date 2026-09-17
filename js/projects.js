@@ -8,7 +8,7 @@
   - `image`: a path like "assets/work/project-01.jpg" for a photo
     thumbnail (used if no `video` is set).
   - `video`: a path like "assets/work/video/clip.mp4" for a video
-    thumbnail — it autoplays muted on hover by default.
+    thumbnail; it autoplays muted on hover by default.
   - `autoplay`: set true on a video entry to have it play muted and
     looping as soon as the page loads, instead of only on hover.
   - `color`: a CSS gradient placeholder, used only if neither
@@ -33,7 +33,7 @@ const PROJECTS = [
   {
     id: "groovers-charleston-1",
     title: "Groovers Listening Bar",
-    client: "Charleston, SC — Event & Lifestyle Photography",
+    client: "Charleston, SC event and lifestyle photography",
     category: "Photography",
     tag: "Photo",
     year: "2026",
@@ -44,7 +44,7 @@ const PROJECTS = [
   {
     id: "groovers-charlotte-1",
     title: "Groovers Listening Bar (Charlotte)",
-    client: "Charlotte, NC — Nightlife Event Photography",
+    client: "Charlotte, NC nightlife event photography",
     category: "Events",
     tag: "Photo",
     year: "2026",
@@ -53,20 +53,31 @@ const PROJECTS = [
     image: "assets/work/groovers-charlotte/groovers-charlotte-2.jpg"
   },
   {
-    id: "trio-1",
-    title: "Trio",
-    client: "Event Photography",
+    id: "trio-charleston-1",
+    title: "Trio Charleston",
+    client: "Event photography",
     category: "Events",
     tag: "Photo",
     year: "2026",
-    description: "DJ and nightlife event coverage at Trio, a Charleston nightclub.",
+    description: "DJ and nightlife event coverage at Trio in Charleston.",
     featured: true,
     image: "assets/work/trio/trio-2.jpg"
   },
   {
+    id: "trio-charlotte-1",
+    title: "Trio Charlotte",
+    client: "Event photography",
+    category: "Events",
+    tag: "Photo",
+    year: "2026",
+    description: "DJ and nightlife event coverage at Trio in Charlotte.",
+    featured: true,
+    image: "assets/work/trio-charlotte/trio-charlotte-1.jpg"
+  },
+  {
     id: "bluedoor-1",
     title: "Blue Door",
-    client: "Event Photography",
+    client: "Event photography",
     category: "Events",
     tag: "Photo",
     year: "2026",
@@ -75,53 +86,9 @@ const PROJECTS = [
     image: "assets/work/bluedoor/bluedoor-1.jpg"
   },
   {
-    id: "trio-2",
-    title: "Trio",
-    client: "Event Photography",
-    category: "Events",
-    tag: "Photo",
-    year: "2026",
-    description: "DJ and nightlife event coverage at Trio, a Charleston nightclub.",
-    featured: false,
-    image: "assets/work/trio/trio-1.jpg"
-  },
-  {
-    id: "trio-3",
-    title: "Trio",
-    client: "Event Photography",
-    category: "Events",
-    tag: "Photo",
-    year: "2026",
-    description: "DJ and nightlife event coverage at Trio, a Charleston nightclub.",
-    featured: false,
-    image: "assets/work/trio/trio-3.jpg"
-  },
-  {
-    id: "bluedoor-2",
-    title: "Blue Door",
-    client: "Vintage Car Photography",
-    category: "Photography",
-    tag: "Photo",
-    year: "2026",
-    description: "A vintage Mustang shoot for Blue Door, a Charleston drink and social bar.",
-    featured: false,
-    image: "assets/work/bluedoor/bluedoor-4.jpg"
-  },
-  {
-    id: "bluedoor-3",
-    title: "Blue Door",
-    client: "Vintage Car Photography",
-    category: "Photography",
-    tag: "Photo",
-    year: "2026",
-    description: "A vintage Mustang shoot for Blue Door, a Charleston drink and social bar.",
-    featured: false,
-    image: "assets/work/bluedoor/bluedoor-3.jpg"
-  },
-  {
     id: "palma-1",
     title: "Palma Day Club",
-    client: "Event Photography",
+    client: "Event photography",
     category: "Events",
     tag: "Photo",
     year: "2026",

@@ -50,11 +50,10 @@ function projectCardHTML(project) {
     const autoplayAttr = project.autoplay ? " autoplay" : "";
     const preload = project.autoplay ? "auto" : "metadata";
     thumbHTML = `<video class="thumb" src="${project.video}"${posterAttr} muted loop playsinline preload="${preload}"${autoplayAttr}></video>`;
+  } else if (project.image) {
+    thumbHTML = `<img class="thumb" src="${project.image}" alt="${project.title}" loading="lazy" decoding="async">`;
   } else {
-    const thumbStyle = project.image
-      ? `background-image:url('${project.image}');background-size:cover;background-position:center;`
-      : `background:${project.color};`;
-    thumbHTML = `<div class="thumb" style="${thumbStyle}"></div>`;
+    thumbHTML = `<div class="thumb" style="background:${project.color};"></div>`;
   }
   return `
     <article class="project-card reveal" data-category="${project.category}">
