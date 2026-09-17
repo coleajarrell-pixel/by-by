@@ -45,23 +45,13 @@
     <section class="section">
       <div class="container contact-grid">
         <div class="reveal">
-          <!--
-            This form is wired to submit as a standard HTML form.
-            To make it actually deliver email, pick one:
-
-            1) Netlify Forms (if hosting on Netlify): add the two
-               attributes already included below (data-netlify="true"
-               and a hidden "form-name" field) — no backend needed.
-
-            2) FormSubmit (https://formsubmit.co): change the form
-               action to "https://formsubmit.co/your-real-email@domain.com"
-               and keep method="POST".
-
-            3) Any other form backend (Formspree, Getform, etc.): point
-               the action at the endpoint they give you.
-          -->
-          <form id="contact-form" name="contact" method="POST" data-netlify="true" action="#">
-            <input type="hidden" name="form-name" value="contact">
+          <!-- Contact form posts via FormSubmit (works on GitHub Pages).
+               First submission may ask Cole to confirm the email once. -->
+          <form id="contact-form" name="contact" method="POST" action="https://formsubmit.co/coleajarrell@gmail.com">
+            <input type="hidden" name="_subject" value="New project inquiry — By & By Productions">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-row">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -106,10 +96,13 @@
           </div>
           <div class="info-card reveal">
             <h3>Follow Along</h3>
-            <div class="social-row">
-              <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-              <a href="https://vimeo.com" target="_blank" rel="noopener">Vimeo</a>
-            </div>
+            <!-- Paste real profile URLs when ready:
+                 <div class="social-row">
+                   <a href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener">Instagram</a>
+                   <a href="https://vimeo.com/YOUR_HANDLE" target="_blank" rel="noopener">Vimeo</a>
+                 </div>
+            -->
+            <p class="social-soon">Instagram &amp; Vimeo links coming soon.</p>
           </div>
           <div class="map-embed reveal">
             <iframe
@@ -153,8 +146,7 @@
           <ul>
             <li><a href="mailto:coleajarrell@gmail.com">coleajarrell@gmail.com</a></li>
             <li><a href="tel:+13049067144">(304) 906-7144</a></li>
-            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://vimeo.com" target="_blank" rel="noopener">Vimeo</a></li>
+            <!-- TODO: replace with real Instagram / Vimeo profile URLs -->
           </ul>
         </div>
       </div>

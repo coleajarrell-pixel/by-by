@@ -1,10 +1,8 @@
 /*
   Portfolio data.
   ------------------------------------------------------------------
-  Entries marked "Sample Project" below are placeholder/template
-  content — replace them with real projects before the site goes
-  live. Real entries (no "Sample Project" prefix) are actual client
-  work.
+  Portfolio entries for live client work only.
+  Add new shoots here; do not leave placeholder/sample titles.
 
   Fields:
   - `image`: a path like "assets/work/project-01.jpg" for a photo
@@ -130,49 +128,5 @@ const PROJECTS = [
     description: "Poolside day club event coverage for Palma Day Club, Charleston, SC.",
     featured: true,
     image: "assets/work/palma/palma-6.jpg"
-  },
-  {
-    id: "p6",
-    title: "Sweetgrass Sessions",
-    client: "Sample Project — Documentary Series",
-    category: "Documentary",
-    tag: "Video",
-    year: "2025",
-    description: "A three-part mini series on Lowcountry makers and the craft traditions they carry forward.",
-    featured: false,
-    color: "linear-gradient(150deg, #423424, #23190f 70%)"
-  },
-  {
-    id: "p7",
-    title: "Battery Bicycle Co.",
-    client: "Sample Project — Brand Film",
-    category: "Brand Film",
-    tag: "Video",
-    year: "2024",
-    description: "Launch film for a Charleston bike shop's custom build program.",
-    featured: false,
-    color: "linear-gradient(150deg, #33424c, #1a2228 70%)"
-  },
-  {
-    id: "p8",
-    title: "Folly Beach Surf Co.",
-    client: "Sample Project — Aerial & Social",
-    category: "Commercial",
-    tag: "Video",
-    year: "2024",
-    description: "Drone and handheld coverage for a summer campaign shot on Folly Beach.",
-    featured: false,
-    color: "linear-gradient(150deg, #2c4048, #3a2f20 70%)"
-  },
-  {
-    id: "p9",
-    title: "Lowcountry Vows",
-    client: "Sample Project — Event Coverage",
-    category: "Events",
-    tag: "Photo",
-    year: "2024",
-    description: "Same-day edit and full gallery for a private garden celebration.",
-    featured: false,
-    color: "linear-gradient(150deg, #4a3628, #2b1c12 70%)"
   }
 ];
