@@ -45,20 +45,27 @@ document.querySelectorAll(".reveal").forEach(initReveal);
 // ---------- project card renderer ----------
 function projectCardHTML(project) {
   let thumbHTML;
-  if (project.video) {
+  // Photo wins for the card look; video is kept for the lightbox.
+  if (project.image) {
+    thumbHTML = `<img class="thumb" src="${project.image}" alt="${project.title}" loading="lazy" decoding="async">`;
+  } else if (project.video) {
     const posterAttr = project.poster ? ` poster="${project.poster}"` : "";
     const autoplayAttr = project.autoplay ? " autoplay" : "";
     const preload = project.autoplay ? "auto" : "metadata";
     thumbHTML = `<video class="thumb" src="${project.video}"${posterAttr} muted loop playsinline preload="${preload}"${autoplayAttr}></video>`;
-  } else if (project.image) {
-    thumbHTML = `<img class="thumb" src="${project.image}" alt="${project.title}" loading="lazy" decoding="async">`;
   } else {
     thumbHTML = `<div class="thumb" style="background:${project.color};"></div>`;
   }
+  const videoAttr = project.video ? ` data-video="${project.video}" data-video-title="${project.title}"` : "";
+  const playBadge = project.video && project.image
+    ? `<span class="play-badge" aria-hidden="true">Play</span>`
+    : "";
+  const clickable = project.video ? " is-video" : "";
   return `
-    <article class="project-card reveal" data-category="${project.category}">
+    <article class="project-card reveal${clickable}" data-category="${project.category}"${videoAttr}>
       ${thumbHTML}
       <span class="badge">${project.tag}</span>
+      ${playBadge}
       <div class="overlay">
         <span class="tag">${project.category} &middot; ${project.year}</span>
         <h3>${project.title}</h3>
@@ -83,6 +90,62 @@ document.addEventListener("mouseout", (e) => {
     video.currentTime = 0;
   }
 });
+
+
+// ---------- film lightbox (photo cards that still have a video) ----------
+function ensureFilmLightbox() {
+  let box = document.getElementById("film-lightbox");
+  if (box) return box;
+  box = document.createElement("div");
+  box.id = "film-lightbox";
+  box.className = "film-lightbox";
+  box.hidden = true;
+  box.innerHTML = `
+    <div class="film-lightbox__backdrop" data-close-film></div>
+    <div class="film-lightbox__panel" role="dialog" aria-modal="true" aria-label="Film player">
+      <button type="button" class="film-lightbox__close" data-close-film aria-label="Close">&times;</button>
+      <p class="film-lightbox__title"></p>
+      <video class="film-lightbox__video" controls playsinline></video>
+    </div>
+  `;
+  document.body.appendChild(box);
+  const close = () => {
+    const video = box.querySelector("video");
+    video.pause();
+    video.removeAttribute("src");
+    video.load();
+    box.hidden = true;
+    document.body.classList.remove("film-open");
+  };
+  box.addEventListener("click", (e) => {
+    if (e.target.closest("[data-close-film]")) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !box.hidden) close();
+  });
+  box._close = close;
+  return box;
+}
+
+function openFilmLightbox(src, title) {
+  const box = ensureFilmLightbox();
+  box.querySelector(".film-lightbox__title").textContent = title || "";
+  const video = box.querySelector("video");
+  video.src = src;
+  box.hidden = false;
+  document.body.classList.add("film-open");
+  video.play().catch(() => {});
+}
+
+document.addEventListener("click", (e) => {
+  const card = e.target.closest(".project-card.is-video");
+  if (!card) return;
+  const src = card.getAttribute("data-video");
+  if (!src) return;
+  e.preventDefault();
+  openFilmLightbox(src, card.getAttribute("data-video-title") || "");
+});
+
 
 // ---------- featured work (home page) ----------
 const featuredGrid = document.querySelector("[data-featured-grid]");

@@ -6,9 +6,11 @@
 
   Fields:
   - `image`: a path like "assets/work/project-01.jpg" for a photo
-    thumbnail (used if no `video` is set).
-  - `video`: a path like "assets/work/video/clip.mp4" for a video
-    thumbnail; it autoplays muted on hover by default.
+    thumbnail. Prefer this for cards; if `video` is also set, the
+    photo shows on the card and the film opens on click.
+  - `video`: a path like "assets/work/video/clip.mp4". Used as the
+    card thumbnail only when no `image` is set; otherwise opens in
+    the film lightbox when the card is clicked.
   - `autoplay`: set true on a video entry to have it play muted and
     looping as soon as the page loads, instead of only on hover.
   - `color`: a CSS gradient placeholder, used only if neither
@@ -22,11 +24,11 @@ const PROJECTS = [
     title: "BioHAKD Longevity Lounge",
     client: "Brand Ad Film",
     category: "Brand Film",
-    tag: "Video",
+    tag: "Film",
     year: "2026",
     description: "A brand ad for BioHAKD Longevity Lounge, a Charleston-area wellness and longevity studio.",
     featured: true,
-    autoplay: true,
+    image: "assets/work/video/biohakd-ad-1-poster.jpg",
     video: "assets/work/video/biohakd-ad-1.mp4",
     poster: "assets/work/video/biohakd-ad-1-poster.jpg"
   },

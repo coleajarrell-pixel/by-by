@@ -1136,3 +1136,104 @@ p {
     display: flex;
   }
 }
+
+
+/* Play badge on photo cards that open a film */
+.project-card.is-video {
+  cursor: pointer;
+}
+.project-card .play-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: rgba(51, 42, 28, 0.82);
+  color: #f3ecdd;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+  opacity: 0.92;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.project-card:hover .play-badge {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+/* Featured film block on home */
+.featured-film {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.featured-film__video {
+  width: 100%;
+  max-height: 80vh;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: #1a1510;
+  object-fit: contain;
+}
+.featured-film__meta {
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  color: #4f6a85;
+}
+
+/* Film lightbox */
+body.film-open {
+  overflow: hidden;
+}
+.film-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+}
+.film-lightbox[hidden] {
+  display: none;
+}
+.film-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 16, 12, 0.82);
+}
+.film-lightbox__panel {
+  position: relative;
+  z-index: 1;
+  width: min(960px, 100%);
+  background: #1a1510;
+  border-radius: 12px;
+  padding: 1rem 1rem 1.25rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+.film-lightbox__close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.55rem;
+  border: 0;
+  background: transparent;
+  color: #f3ecdd;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.film-lightbox__title {
+  margin: 0 2rem 0.75rem 0.25rem;
+  color: #f3ecdd;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.1rem;
+}
+.film-lightbox__video {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  background: #000;
+  max-height: 75vh;
+}
