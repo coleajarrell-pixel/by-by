@@ -1263,15 +1263,3 @@ body.film-open {
   background: #000;
   max-height: 75vh;
 }
-
-/* Showreel */
-.showreel { padding: 0 0 72px; background: var(--color-bg); }
-.showreel-frame { position: relative; overflow: hidden; border-radius: 6px; aspect-ratio: 16 / 9; background: #111; box-shadow: 0 24px 60px rgba(51,42,28,.22); }
-.showreel-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-.showreel-frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(0,0,0,.45), transparent 35%); }
-.showreel-label { position: absolute; left: 20px; bottom: 18px; z-index: 2; color: var(--color-on-dark); font-family: var(--font-body); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
-.showreel-label .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent-soft); animation: reelPulse 1.6s ease-in-out infinite; }
-.showreel-toggle { position: absolute; right: 18px; bottom: 14px; z-index: 2; background: rgba(243,236,221,.14); color: var(--color-on-dark); border: 1px solid rgba(243,236,221,.45); border-radius: 999px; padding: 7px 16px; font: 500 12px var(--font-body); letter-spacing: .12em; text-transform: uppercase; cursor: pointer; backdrop-filter: blur(6px); transition: background var(--transition); }
-.showreel-toggle:hover { background: rgba(243,236,221,.28); }
-@keyframes reelPulse { 50% { opacity: .35; } }
-@media (max-width: 640px) { .showreel { padding-bottom: 48px; } .showreel-frame { border-radius: 4px; } .showreel-label { left: 12px; bottom: 12px; font-size: 10px; } .showreel-toggle { right: 10px; bottom: 8px; padding: 5px 12px; font-size: 10px; } }
