@@ -266,10 +266,10 @@ p {
 
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding-top: 120px;
+  padding: 140px 0 72px;
   overflow: hidden;
   background:
     radial-gradient(ellipse 80% 60% at 15% 0%, rgba(79, 106, 133, 0.16), transparent 60%),
@@ -292,7 +292,7 @@ p {
 .hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 780px;
+  max-width: 920px;
 }
 
 .hero h1 {
@@ -309,7 +309,7 @@ p {
   font-size: 1.15rem;
   max-width: 560px;
   color: var(--color-text-muted);
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 
 .hero-actions {
@@ -319,20 +319,19 @@ p {
 }
 
 .hero-meta {
-  position: absolute;
-  right: 24px;
-  bottom: 40px;
+  position: relative;
   display: flex;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 28px 48px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-border);
   z-index: 1;
 }
 
-@media (max-width: 900px) {
-  .hero-meta { display: none; }
-}
-
 .hero-meta div {
-  text-align: right;
+  text-align: left;
+  min-width: 160px;
 }
 
 .hero-meta .num {
@@ -340,6 +339,8 @@ p {
   font-size: 1.6rem;
   color: var(--color-accent);
   display: block;
+  line-height: 1;
+  margin-bottom: 6px;
 }
 
 .hero-meta .label {
@@ -347,6 +348,17 @@ p {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 120px 0 56px;
+  }
+  .hero-meta {
+    gap: 20px 32px;
+    margin-top: 28px;
+    padding-top: 22px;
+  }
 }
 
 /* ---------- ticker ---------- */
@@ -496,6 +508,11 @@ p {
   background: var(--color-bg);
   padding: 40px 32px;
   transition: background var(--transition);
+}
+
+.service-card[id],
+#services {
+  scroll-margin-top: 96px;
 }
 
 .service-card:hover {
@@ -715,8 +732,8 @@ p {
   align-items: center;
   justify-content: center;
   width: 200px;
-  height: 100px;
-  padding: 20px 24px;
+  height: 112px;
+  padding: 18px 22px;
   background: #ffffff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -728,9 +745,18 @@ p {
 }
 
 .client-card img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  max-width: 148px;
+  max-height: 64px;
   object-fit: contain;
+  object-position: center;
+}
+
+/* Square / tall marks (BioHAKD, Trio) need a taller fill to match wordmarks */
+.client-card--mark img {
+  max-width: 88px;
+  max-height: 88px;
 }
 
 /* ---------- testimonial ---------- */
