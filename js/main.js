@@ -262,10 +262,10 @@ const SCOPE_CATALOG = {
     title: "FAA-Aware Aerial & Drone Cinema",
     projectType: "Aerial / Drone",
     weight: 0.5,
-    format: "4K Aerial Cinema",
+    format: "4K Hospitality Aerials",
     deliverables: [
-      "FAA-aware 4K aerial establishing sequences & coastal flyovers",
-      "Overhead architectural, marina & waterfront still frames"
+      "FAA-aware 4K aerial sequences for hospitality, resorts & waterfront venues",
+      "Coastal, on-the-water charter, outdoor dining & live event perspectives"
     ]
   },
   "post-production": {
