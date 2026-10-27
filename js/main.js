@@ -243,7 +243,7 @@ const SCOPE_CATALOG = {
     format: "High-Res Stills",
     deliverables: [
       "25–40+ color-graded high-resolution stills (print & web)",
-      "Interior atmosphere, hero details & candid lifestyle frames"
+      "Hospitality atmosphere, plated dishes, cocktails & candid lifestyle frames"
     ]
   },
   "event-recap": {
