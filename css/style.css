@@ -895,6 +895,11 @@ p {
   justify-content: center;
 }
 
+.team-grid--solo {
+  grid-template-columns: minmax(0, 320px);
+  justify-content: center;
+}
+
 @media (max-width: 620px) {
   .team-grid--duo {
     grid-template-columns: minmax(0, 280px);
