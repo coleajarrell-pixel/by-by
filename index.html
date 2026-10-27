@@ -18,7 +18,7 @@
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="css/style.css?v=14">
+ <link rel="stylesheet" href="css/style.css?v=15">
 </head>
 <body>
 
@@ -45,24 +45,27 @@
  <main>
  <!-- Hero -->
  <section class="hero">
- <div class="container hero-inner">
- <div class="hero-top-bar">
- <div class="hero-finder" role="status" aria-label="Camera viewfinder status">
+ <div class="container">
+ <div class="hero-frame">
+ <span class="hero-corner hero-corner--tl" aria-hidden="true"></span>
+ <span class="hero-corner hero-corner--tr" aria-hidden="true"></span>
+ <span class="hero-corner hero-corner--bl" aria-hidden="true"></span>
+ <span class="hero-corner hero-corner--br" aria-hidden="true"></span>
+ <div class="hero-finder-bar" role="status" aria-label="Camera viewfinder status">
+ <div class="hero-finder__left">
  <span class="hero-finder__rec"><span class="hero-finder__dot" aria-hidden="true">&#9679;</span> REC</span>
- <span class="hero-finder__sep" aria-hidden="true">&middot;</span>
- <span class="hero-finder__item">CHARLESTON, SC</span>
- <span class="hero-finder__sep" aria-hidden="true">&middot;</span>
- <span class="hero-finder__item">24 FPS &middot; 4K RAW</span>
- <span class="hero-finder__sep" aria-hidden="true">&middot;</span>
- <a href="#shoot-builder" class="hero-finder__item hero-finder__booking">BOOKING Q4 / Q1</a>
+ <span class="hero-finder__loc">CHARLESTON, SC &mdash; 24 FPS</span>
  </div>
+ <a href="#shoot-builder" class="hero-finder__booking">[ BOOKING Q4 / Q1 ]</a>
  </div>
- <span class="eyebrow">Charleston, South Carolina</span>
+ <div class="hero-inner">
  <h1>Every story has <em>its time.</em> We're here for the telling.</h1>
- <p class="lede">By &amp; By Productions is a Charleston-based media company crafting brand films, documentaries, commercials, and photography for people and places with something worth saying.</p>
+ <p class="lede">Brand films, documentaries, commercials, and photography crafted in Charleston, South Carolina.</p>
  <div class="hero-actions">
  <a href="work.html" class="btn btn-primary">View Our Work <span class="btn-arrow">&rarr;</span></a>
  <a href="#shoot-builder" class="btn btn-outline">Build Your Shoot</a>
+ </div>
+ </div>
  </div>
  </div>
  </section>
@@ -74,46 +77,6 @@
  <span>Brand Films</span><span>Documentary</span><span>Commercial</span><span>Photography</span><span>Aerial</span><span>Social Content</span>
  </div>
  </div>
-
- <!-- Chapter Directory -->
- <section class="chapter-directory" aria-label="Scene directory">
- <div class="container">
- <div class="chapter-grid reveal">
- <a href="work.html" class="chapter-card">
- <div class="chapter-card__meta">
- <span class="chapter-card__scene">SCENE 01 // THE PROOF</span>
- <span class="chapter-card__arrow" aria-hidden="true">&rarr;</span>
- </div>
- <h2 class="chapter-card__title">Selected Work</h2>
- <p class="chapter-card__sub">Brand films, commercial spots &amp; event coverage</p>
- </a>
- <a href="#services" class="chapter-card">
- <div class="chapter-card__meta">
- <span class="chapter-card__scene">SCENE 02 // THE CRAFT</span>
- <span class="chapter-card__arrow" aria-hidden="true">&rarr;</span>
- </div>
- <h2 class="chapter-card__title">Capabilities</h2>
- <p class="chapter-card__sub">Six disciplines under one roof, from drone to edit</p>
- </a>
- <a href="about.html" class="chapter-card">
- <div class="chapter-card__meta">
- <span class="chapter-card__scene">SCENE 03 // THE ETHOS</span>
- <span class="chapter-card__arrow" aria-hidden="true">&rarr;</span>
- </div>
- <h2 class="chapter-card__title">Our Story</h2>
- <p class="chapter-card__sub">Why &ldquo;by and by&rdquo; shapes every frame we shoot</p>
- </a>
- <a href="#shoot-builder" class="chapter-card">
- <div class="chapter-card__meta">
- <span class="chapter-card__scene">SCENE 04 // THE SLATE</span>
- <span class="chapter-card__arrow" aria-hidden="true">&rarr;</span>
- </div>
- <h2 class="chapter-card__title">Build a Shoot</h2>
- <p class="chapter-card__sub">Configure your deliverables and lock a date</p>
- </a>
- </div>
- </div>
- </section>
 
  <!-- About teaser -->
  <section class="section">
@@ -480,8 +443,8 @@
  </div>
  </footer>
 
- <script src="js/projects.js?v=14"></script>
- <script src="js/main.js?v=14"></script>
- <script src="js/clapper.js?v=14" defer></script>
+ <script src="js/projects.js?v=15"></script>
+ <script src="js/main.js?v=15"></script>
+ <script src="js/clapper.js?v=15" defer></script>
 </body>
 </html>
