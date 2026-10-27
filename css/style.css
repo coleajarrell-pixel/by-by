@@ -1937,18 +1937,26 @@ label[for] {
   cursor: var(--cursor-camera-active);
 }
 
-/* ---------- Clean 35mm Viewfinder Hero Frame (v15) ---------- */
+/* ---------- Clean 35mm Viewfinder Hero Frame (v16) ---------- */
 .hero {
-  padding: 136px 0 72px;
+  min-height: calc(100vh - 62px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 64px;
   background:
     radial-gradient(ellipse 58% 55% at 38% 52%, rgba(251, 247, 238, 0.92), transparent 72%),
     radial-gradient(ellipse 70% 50% at 88% 82%, rgba(168, 83, 42, 0.13), transparent 62%),
     linear-gradient(180deg, #ede6d6 0%, #f3ecdd 58%, #efe3cc 100%);
 }
 
+.ticker + .section {
+  padding-top: clamp(128px, 16vh, 176px);
+}
+
 .hero-frame {
   position: relative;
-  padding: 36px 40px 44px;
+  padding: 52px 56px 60px;
   border: 1px solid rgba(220, 207, 176, 0.55);
   border-radius: 2px;
   background: rgba(251, 247, 238, 0.36);
@@ -1994,8 +2002,8 @@ label[for] {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px 20px;
-  padding-bottom: 24px;
-  margin-bottom: 36px;
+  padding-bottom: 26px;
+  margin-bottom: 44px;
   border-bottom: 1px solid rgba(220, 207, 176, 0.75);
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -2031,30 +2039,31 @@ label[for] {
 }
 
 .hero-frame h1 {
-  font-size: clamp(2.75rem, 6.2vw, 4.75rem);
+  font-size: clamp(2.85rem, 6.2vw, 4.85rem);
   line-height: 1.08;
   letter-spacing: -0.02em;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .hero-frame p.lede {
-  font-size: 1.14rem;
+  font-size: 1.15rem;
   max-width: 580px;
   color: var(--color-text-muted);
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
 @media (max-width: 640px) {
   .hero {
-    padding: 112px 0 48px;
+    min-height: calc(100svh - 56px);
+    padding: 104px 0 44px;
   }
   .hero-frame {
-    padding: 22px 20px 28px;
+    padding: 28px 22px 34px;
   }
   .hero-finder-bar {
     font-size: 0.64rem;
     padding-bottom: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 26px;
     gap: 8px 12px;
   }
   .hero-finder__left {
