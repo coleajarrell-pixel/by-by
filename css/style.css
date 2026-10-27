@@ -1937,17 +1937,68 @@ label[for] {
   cursor: var(--cursor-camera-active);
 }
 
-/* ---------- Clean 35mm Viewfinder Hero Frame (v16) ---------- */
+/* ---------- Clean 35mm Viewfinder Hero Frame + Rich Lowcountry Golden-Hour Color Mesh (v17) ---------- */
+body {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(200, 100, 50, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 88% 42%, rgba(226, 155, 82, 0.16) 0%, transparent 48%),
+    radial-gradient(circle at 20% 78%, rgba(79, 106, 133, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 82% 92%, rgba(168, 83, 42, 0.14) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+.section--alt {
+  background:
+    radial-gradient(ellipse 75% 65% at 85% 20%, rgba(200, 100, 50, 0.14), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 12% 85%, rgba(79, 106, 133, 0.12), transparent 60%),
+    linear-gradient(180deg, #eadbc2 0%, #e6d4b7 100%);
+}
+
 .hero {
+  position: relative;
   min-height: calc(100vh - 62px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 120px 0 64px;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse 58% 55% at 38% 52%, rgba(251, 247, 238, 0.92), transparent 72%),
-    radial-gradient(ellipse 70% 50% at 88% 82%, rgba(168, 83, 42, 0.13), transparent 62%),
-    linear-gradient(180deg, #ede6d6 0%, #f3ecdd 58%, #efe3cc 100%);
+    radial-gradient(ellipse 52% 48% at 86% 18%, rgba(196, 88, 36, 0.34) 0%, rgba(196, 88, 36, 0.12) 48%, transparent 74%),
+    radial-gradient(ellipse 56% 52% at 14% 86%, rgba(218, 132, 58, 0.36) 0%, rgba(218, 132, 58, 0.14) 50%, transparent 76%),
+    radial-gradient(ellipse 50% 46% at 12% 14%, rgba(79, 106, 133, 0.26) 0%, rgba(79, 106, 133, 0.08) 52%, transparent 75%),
+    radial-gradient(ellipse 46% 42% at 82% 88%, rgba(168, 83, 42, 0.30) 0%, transparent 70%),
+    radial-gradient(ellipse 54% 48% at 50% 50%, rgba(251, 245, 233, 0.88) 0%, rgba(245, 232, 208, 0.45) 62%, transparent 100%),
+    linear-gradient(135deg, #dfcbb0 0%, #f1e3ca 38%, #ebd3b0 72%, #dfba92 100%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  background:
+    radial-gradient(circle at 76% 28%, rgba(208, 94, 42, 0.24) 0%, transparent 45%),
+    radial-gradient(circle at 24% 74%, rgba(228, 152, 74, 0.26) 0%, transparent 48%),
+    radial-gradient(circle at 28% 22%, rgba(92, 118, 138, 0.18) 0%, transparent 42%);
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 0;
+  animation: heroAmbientShift 14s ease-in-out infinite alternate;
+}
+
+@keyframes heroAmbientShift {
+  0% {
+    transform: translate3d(-1.5%, -1%, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(1.5%, 1.5%, 0) scale(1.05);
+  }
+}
+
+.ticker {
+  background: linear-gradient(90deg, #e5cfb0 0%, #ecdcc2 50%, #e3c8a5 100%);
+  border-top: 1px solid rgba(168, 83, 42, 0.28);
+  border-bottom: 1px solid rgba(168, 83, 42, 0.28);
 }
 
 .ticker + .section {
@@ -1956,20 +2007,28 @@ label[for] {
 
 .hero-frame {
   position: relative;
+  z-index: 1;
   padding: 52px 56px 60px;
-  border: 1px solid rgba(220, 207, 176, 0.55);
-  border-radius: 2px;
-  background: rgba(251, 247, 238, 0.36);
+  border: 1px solid rgba(168, 83, 42, 0.34);
+  border-radius: 3px;
+  background:
+    radial-gradient(ellipse 75% 70% at 88% 12%, rgba(214, 112, 56, 0.16), transparent 62%),
+    radial-gradient(ellipse 70% 65% at 10% 90%, rgba(228, 162, 100, 0.20), transparent 62%),
+    linear-gradient(165deg, rgba(252, 247, 237, 0.86) 0%, rgba(247, 237, 218, 0.78) 100%);
+  box-shadow:
+    0 24px 60px rgba(120, 58, 26, 0.12),
+    inset 0 1px 0 rgba(255, 252, 245, 0.75);
+  backdrop-filter: blur(8px);
 }
 
 .hero-corner {
   position: absolute;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   pointer-events: none;
   border-color: var(--color-accent);
   border-style: solid;
-  opacity: 0.78;
+  opacity: 0.92;
 }
 
 .hero-corner--tl {
@@ -2004,7 +2063,7 @@ label[for] {
   gap: 10px 20px;
   padding-bottom: 26px;
   margin-bottom: 44px;
-  border-bottom: 1px solid rgba(220, 207, 176, 0.75);
+  border-bottom: 1px solid rgba(168, 83, 42, 0.26);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.14em;
@@ -2019,19 +2078,19 @@ label[for] {
 }
 
 .hero-finder__loc {
-  color: var(--color-text-muted);
+  color: #5e5242;
   font-weight: 500;
 }
 
 .hero-finder-bar .hero-finder__booking {
-  color: var(--color-text);
+  color: var(--color-accent);
   font-weight: 600;
   border-bottom: none;
   transition: color var(--transition);
 }
 
 .hero-finder-bar .hero-finder__booking:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-hover);
 }
 
 .hero-frame .hero-inner {
@@ -2043,12 +2102,13 @@ label[for] {
   line-height: 1.08;
   letter-spacing: -0.02em;
   margin-bottom: 24px;
+  color: var(--color-text);
 }
 
 .hero-frame p.lede {
   font-size: 1.15rem;
   max-width: 580px;
-  color: var(--color-text-muted);
+  color: #5c5040;
   margin-bottom: 36px;
 }
 
