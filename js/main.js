@@ -210,3 +210,246 @@ if (contactForm) {
 document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
+
+// ---------- Interactive "Build Your Shoot" Scope Builder & Contact Prefill ----------
+const SCOPE_CATALOG = {
+  "hero-film": {
+    id: "hero-film",
+    title: "Hero Brand Film (16:9 Flagship)",
+    projectType: "Brand Film",
+    weight: 1.0,
+    format: "4K 24fps Cinema",
+    deliverables: [
+      "Flagship 16:9 hero brand film (2–3 min graded master)",
+      "Pre-shoot creative treatment & shot list planning"
+    ]
+  },
+  "social-cutdowns": {
+    id: "social-cutdowns",
+    title: "Vertical Social Cutdowns (Reels / TikTok Pack)",
+    projectType: "Commercial & Advertising",
+    weight: 0.5,
+    format: "9:16 Social Pack",
+    deliverables: [
+      "3–5 vertical 9:16 social edits (7–30s) cut to the beat",
+      "Hook variations formatted for Reels, TikTok & Shorts"
+    ]
+  },
+  "photography": {
+    id: "photography",
+    title: "Lifestyle & Brand Photography Set",
+    projectType: "Photography",
+    weight: 0.5,
+    format: "High-Res Stills",
+    deliverables: [
+      "25–40+ color-graded high-resolution stills (print & web)",
+      "Interior atmosphere, hero details & candid lifestyle frames"
+    ]
+  },
+  "event-recap": {
+    id: "event-recap",
+    title: "Nightlife / Event Recap Reel (Next-Day Option)",
+    projectType: "Commercial & Advertising",
+    weight: 0.5,
+    format: "Next-Day Event Recap",
+    deliverables: [
+      "High-energy 30–60s hero recap reel + crowd cutdowns",
+      "Fast-turnaround delivery (next-day / 48-hr option available)"
+    ]
+  },
+  "aerial-drone": {
+    id: "aerial-drone",
+    title: "FAA-Aware Aerial & Drone Cinema",
+    projectType: "Aerial / Drone",
+    weight: 0.5,
+    format: "4K Aerial Cinema",
+    deliverables: [
+      "FAA-aware 4K aerial establishing sequences & coastal flyovers",
+      "Overhead architectural, marina & waterfront still frames"
+    ]
+  },
+  "post-production": {
+    id: "post-production",
+    title: "Full Post-Production, Color & Sound Mix",
+    projectType: "Brand Film",
+    weight: 0.25,
+    format: "35mm Color + Sound Mix",
+    deliverables: [
+      "35mm-inspired cinema color grade, sound design & audio mix",
+      "Multi-platform delivery masters with full commercial rights"
+    ]
+  }
+};
+
+function computeSlateSummary(selectedIds) {
+  const items = selectedIds.map((id) => SCOPE_CATALOG[id]).filter(Boolean);
+  const count = items.length;
+  if (count === 0) {
+    return {
+      countLabel: "0 DELIVERABLES SELECTED",
+      footprint: "Select 1+ items to size shoot",
+      format: "Custom Scope",
+      bullets: ["Toggle one or more deliverables on the left to build your production slate."],
+      projectType: "Brand Film",
+      href: "contact.html"
+    };
+  }
+
+  const totalWeight = items.reduce((sum, item) => sum + item.weight, 0);
+  let footprint;
+  if (count === 1 && items[0].id === "post-production") {
+    footprint = "Remote Editorial & Finishing";
+  } else if (totalWeight <= 0.5) {
+    footprint = "Half-Day Location Shoot · Charleston, SC";
+  } else if (totalWeight <= 1.5) {
+    footprint = "1-Day Location Shoot · Charleston, SC";
+  } else if (totalWeight <= 2.5) {
+    footprint = "1–2 Day Multi-Asset Shoot · Lowcountry";
+  } else {
+    footprint = "Multi-Day Full Production Package";
+  }
+
+  const formats = items.map((i) => i.format);
+  const formatSummary = formats.length <= 2
+    ? formats.join(" + ")
+    : `${formats[0]} + ${formats[1]} (+${formats.length - 2} more)`;
+
+  const bullets = [];
+  items.forEach((item) => {
+    item.deliverables.forEach((d) => bullets.push(d));
+  });
+
+  // Determine primary project type priority
+  let projectType = items[0].projectType;
+  if (selectedIds.includes("hero-film")) {
+    projectType = "Brand Film";
+  } else if (selectedIds.includes("social-cutdowns") || selectedIds.includes("event-recap")) {
+    projectType = "Commercial & Advertising";
+  } else if (selectedIds.includes("photography")) {
+    projectType = "Photography";
+  } else if (selectedIds.includes("aerial-drone")) {
+    projectType = "Aerial / Drone";
+  }
+
+  const scopeParam = encodeURIComponent(selectedIds.join(","));
+  return {
+    countLabel: `${count} ${count === 1 ? "DELIVERABLE" : "DELIVERABLES"} SELECTED`,
+    footprint,
+    format: formatSummary,
+    bullets,
+    projectType,
+    href: `contact.html?scope=${scopeParam}`
+  };
+}
+
+const shootBuilder = document.querySelector("[data-shoot-builder]");
+if (shootBuilder) {
+  const optionButtons = Array.from(shootBuilder.querySelectorAll(".scope-option"));
+  const countEl = shootBuilder.querySelector("[data-slate-count]");
+  const footprintEl = shootBuilder.querySelector("[data-slate-footprint]");
+  const formatEl = shootBuilder.querySelector("[data-slate-format]");
+  const listEl = shootBuilder.querySelector("[data-slate-list]");
+  const ctaEl = shootBuilder.querySelector("[data-slate-cta]");
+
+  function syncBuilderUI() {
+    const selectedIds = [];
+    optionButtons.forEach((btn) => {
+      const isSelected = btn.classList.contains("is-selected");
+      btn.setAttribute("aria-pressed", isSelected ? "true" : "false");
+      const checkEl = btn.querySelector(".scope-option__check");
+      if (checkEl) {
+        checkEl.textContent = isSelected ? "[ \u2713 ]" : "[ + ]";
+      }
+      if (isSelected) {
+        selectedIds.push(btn.getAttribute("data-scope-id"));
+      }
+    });
+
+    const summary = computeSlateSummary(selectedIds);
+    if (countEl) countEl.textContent = summary.countLabel;
+    if (footprintEl) footprintEl.textContent = summary.footprint;
+    if (formatEl) formatEl.textContent = summary.format;
+    if (listEl) {
+      listEl.innerHTML = summary.bullets.map((b) => `<li>${b}</li>`).join("");
+    }
+    if (ctaEl) {
+      ctaEl.setAttribute("href", summary.href);
+    }
+  }
+
+  optionButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("is-selected");
+      syncBuilderUI();
+    });
+  });
+
+  shootBuilder.querySelectorAll("[data-slate-action]").forEach((presetBtn) => {
+    presetBtn.addEventListener("click", () => {
+      const action = presetBtn.getAttribute("data-slate-action");
+      optionButtons.forEach((btn) => {
+        if (action === "full") {
+          btn.classList.add("is-selected");
+        } else {
+          btn.classList.remove("is-selected");
+        }
+      });
+      syncBuilderUI();
+    });
+  });
+
+  syncBuilderUI();
+}
+
+// Prefill contact.html when ?scope=... is present in the URL
+if (contactForm && window.location.search) {
+  const params = new URLSearchParams(window.location.search);
+  const rawScope = params.get("scope");
+  if (rawScope) {
+    const rawParts = rawScope.split(",").map((s) => s.trim()).filter(Boolean);
+    const matchedIds = rawParts.filter((id) => Boolean(SCOPE_CATALOG[id]));
+    const projectTypeSelect = contactForm.querySelector("#project-type");
+    const messageInput = contactForm.querySelector("#message");
+    const prefillBanner = document.getElementById("slate-prefill-banner");
+    const prefillSummary = document.querySelector("[data-prefill-summary]");
+
+    if (matchedIds.length > 0) {
+      const summary = computeSlateSummary(matchedIds);
+      const selectedTitles = matchedIds.map((id) => SCOPE_CATALOG[id].title);
+
+      if (projectTypeSelect) {
+        Array.from(projectTypeSelect.options).forEach((opt) => {
+          if (opt.textContent.trim() === summary.projectType) {
+            projectTypeSelect.value = opt.value;
+          }
+        });
+      }
+
+      if (messageInput && !messageInput.value.trim()) {
+        const lines = [
+          "Production Slate (via Scope Builder):",
+          ...selectedTitles.map((t) => `• ${t}`),
+          "",
+          `Estimated Shoot Footprint: ${summary.footprint}`,
+          `Primary Format: ${summary.format}`,
+          "",
+          "Project goals, location & target timeline:",
+          ""
+        ];
+        messageInput.value = lines.join("\n");
+      }
+
+      if (prefillBanner) {
+        prefillBanner.hidden = false;
+        if (prefillSummary) {
+          prefillSummary.textContent = `${matchedIds.length} ${matchedIds.length === 1 ? "deliverable" : "deliverables"} loaded into your inquiry (${selectedTitles.join(" · ")}). Add your target dates or notes below.`;
+        }
+      }
+    } else if (rawParts.length > 0 && messageInput && !messageInput.value.trim()) {
+      messageInput.value = `Requested Scope: ${rawParts.join(", ")}\n\nProject details & target timeline:\n`;
+      if (prefillBanner) {
+        prefillBanner.hidden = false;
+      }
+    }
+  }
+}

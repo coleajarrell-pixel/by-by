@@ -4,15 +4,21 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>By &amp; By Productions | Charleston, SC Media Company</title>
- <meta name="description" content="By & By Productions is a Charleston, SC media company crafting brand films, documentaries, commercials, and photography.">
+ <meta name="description" content="By &amp; By Productions is a Charleston, SC media company crafting brand films, documentaries, commercials, and photography.">
  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
- <meta property="og:title" content="By & By Productions | Charleston, SC Media Company">
+ <meta property="og:title" content="By &amp; By Productions | Charleston, SC Media Company">
  <meta property="og:description" content="Brand films, documentaries, commercials, and photography made in Charleston, SC.">
  <meta property="og:type" content="website">
+ <meta property="og:url" content="https://coleajarrell-pixel.github.io/by-by/">
+ <meta property="og:image" content="https://coleajarrell-pixel.github.io/by-by/assets/work/video/biohakd-ad-1-poster.jpg">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="By &amp; By Productions | Charleston, SC Media Company">
+ <meta name="twitter:description" content="Brand films, documentaries, commercials, and photography made in Charleston, SC.">
+ <meta name="twitter:image" content="https://coleajarrell-pixel.github.io/by-by/assets/work/video/biohakd-ad-1-poster.jpg">
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="css/style.css?v=7">
+ <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="css/style.css?v=8">
 </head>
 <body>
 
@@ -40,12 +46,23 @@
  <!-- Hero -->
  <section class="hero">
  <div class="container hero-inner">
+ <div class="hero-top-bar">
+ <div class="hero-finder" role="status" aria-label="Camera viewfinder status">
+ <span class="hero-finder__rec"><span class="hero-finder__dot" aria-hidden="true">&#9679;</span> REC</span>
+ <span class="hero-finder__sep" aria-hidden="true">&middot;</span>
+ <span class="hero-finder__item">CHARLESTON, SC</span>
+ <span class="hero-finder__sep" aria-hidden="true">&middot;</span>
+ <span class="hero-finder__item">24 FPS &middot; 4K RAW</span>
+ <span class="hero-finder__sep" aria-hidden="true">&middot;</span>
+ <a href="#shoot-builder" class="hero-finder__item hero-finder__booking">BOOKING Q4 / Q1</a>
+ </div>
+ </div>
  <span class="eyebrow">Charleston, South Carolina</span>
  <h1>Every story has <em>its time.</em> We're here for the telling.</h1>
  <p class="lede">By &amp; By Productions is a Charleston-based media company crafting brand films, documentaries, commercials, and photography for people and places with something worth saying.</p>
  <div class="hero-actions">
  <a href="work.html" class="btn btn-primary">View Our Work <span class="btn-arrow">&rarr;</span></a>
- <a href="contact.html" class="btn btn-outline">Start a Project</a>
+ <a href="#shoot-builder" class="btn btn-outline">Build Your Shoot</a>
  </div>
  <div class="hero-meta">
  <div>
@@ -67,6 +84,46 @@
  <span>Brand Films</span><span>Documentary</span><span>Commercial</span><span>Photography</span><span>Aerial</span><span>Social Content</span>
  </div>
  </div>
+
+ <!-- Chapter Directory -->
+ <section class="chapter-directory" aria-label="Scene directory">
+ <div class="container">
+ <div class="chapter-grid reveal">
+ <a href="work.html" class="chapter-card">
+ <div class="chapter-card__meta">
+ <span class="chapter-card__scene">SCENE 01 // THE PROOF</span>
+ <span class="chapter-card__arrow" aria-hidden="true">&rarr;</span>
+ </div>
+ <h2 class="chapter-card__title">Selected Work</h2>
+ <p class="chapter-card__sub">Brand films, commercial spots &amp; event coverage</p>
+ </a>
+ <a href="#services" class="chapter-card">
+ <div class="chapter-card__meta">
+ <span class="chapter-card__scene">SCENE 02 // THE CRAFT</span>
+ <span class="chapter-card__arrow" aria-hidden="true">&rarr;</span>
+ </div>
+ <h2 class="chapter-card__title">Capabilities</h2>
+ <p class="chapter-card__sub">Six disciplines under one roof, from drone to edit</p>
+ </a>
+ <a href="about.html" class="chapter-card">
+ <div class="chapter-card__meta">
+ <span class="chapter-card__scene">SCENE 03 // THE ETHOS</span>
+ <span class="chapter-card__arrow" aria-hidden="true">&rarr;</span>
+ </div>
+ <h2 class="chapter-card__title">Our Story</h2>
+ <p class="chapter-card__sub">Why &ldquo;by and by&rdquo; shapes every frame we shoot</p>
+ </a>
+ <a href="#shoot-builder" class="chapter-card">
+ <div class="chapter-card__meta">
+ <span class="chapter-card__scene">SCENE 04 // THE SLATE</span>
+ <span class="chapter-card__arrow" aria-hidden="true">&rarr;</span>
+ </div>
+ <h2 class="chapter-card__title">Build a Shoot</h2>
+ <p class="chapter-card__sub">Configure your deliverables and lock a date</p>
+ </a>
+ </div>
+ </div>
+ </section>
 
  <!-- About teaser -->
  <section class="section">
@@ -95,7 +152,7 @@
  </div>
  </section>
 
-<!-- Testimonial -->
+ <!-- Testimonial -->
  <section class="section">
  <div class="container">
  <div class="testimonial-card reveal">
@@ -143,34 +200,94 @@
  <div class="container">
  <div class="services-grid reveal">
  <div class="service-card" id="service-brand-films">
+ <div class="service-card__head">
+ <span class="service-reel">REEL 01</span>
+ <span class="service-status">[ IN HOUSE ]</span>
+ </div>
  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="15" height="12" rx="1.5"/><path d="M17 10l5-3v10l-5-3"/></svg>
  <h3>Brand Films</h3>
  <p>Cinematic short-form films that give your business a voice and a face.</p>
+ <ul class="service-deliverables">
+ <li>2&ndash;3 min flagship 16:9 hero film</li>
+ <li>9:16 vertical social cutdowns for Reels &amp; TikTok</li>
+ <li>Custom sound design &amp; 35mm-inspired color grade</li>
+ <li>Full commercial usage rights &amp; master files</li>
+ </ul>
  </div>
  <div class="service-card" id="service-documentary">
+ <div class="service-card__head">
+ <span class="service-reel">REEL 02</span>
+ <span class="service-status">[ IN HOUSE ]</span>
+ </div>
  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16v13H4z"/><path d="M4 9h16M8 6v3"/></svg>
  <h3>Documentary</h3>
  <p>Character-driven, story-first films for people and causes worth knowing about.</p>
+ <ul class="service-deliverables">
+ <li>Pre-production story development &amp; interviews</li>
+ <li>On-location cinema camera &amp; field audio capture</li>
+ <li>Narrative editorial cut with b-roll integration</li>
+ <li>Festival, screening &amp; web master deliverables</li>
+ </ul>
  </div>
  <div class="service-card" id="service-commercial">
+ <div class="service-card__head">
+ <span class="service-reel">REEL 03</span>
+ <span class="service-status">[ IN HOUSE ]</span>
+ </div>
  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l4-3h10l4 3"/><rect x="3" y="8" width="18" height="12" rx="1.5"/><circle cx="12" cy="14" r="3.2"/></svg>
  <h3>Commercial &amp; Advertising</h3>
  <p>Polished spots for web, social, and broadcast built around a clear message.</p>
+ <ul class="service-deliverables">
+ <li>15s, 30s &amp; 60s ad spots tailored to conversion</li>
+ <li>Multi-ratio exports (16:9, 9:16, 4:5) for paid social</li>
+ <li>Alternate hook cuts for creative campaign testing</li>
+ <li>Next-day nightlife &amp; live event recap options</li>
+ </ul>
  </div>
  <div class="service-card" id="service-photography">
+ <div class="service-card__head">
+ <span class="service-reel">REEL 04</span>
+ <span class="service-status">[ IN HOUSE ]</span>
+ </div>
  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3.2"/><path d="M3 16l4-8 4 5 3-4 7 7"/></svg>
  <h3>Photography</h3>
  <p>Product, event, portrait, and brand photography shot for how you'll actually use it.</p>
+ <ul class="service-deliverables">
+ <li>Hospitality, food &amp; beverage, and interior lookbooks</li>
+ <li>High-energy nightlife, concert &amp; event coverage</li>
+ <li>Founder portraits, team frames &amp; lifestyle sets</li>
+ <li>Full-res print + web-ready color-graded galleries</li>
+ </ul>
  </div>
  <div class="service-card" id="service-aerial">
+ <div class="service-card__head">
+ <span class="service-reel">REEL 05</span>
+ <span class="service-status">[ IN HOUSE ]</span>
+ </div>
  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.2 4.5L19 8l-3.5 3.4L16.4 16 12 13.6 7.6 16l.9-4.6L5 8l4.8-.5z"/></svg>
  <h3>Aerial &amp; Drone</h3>
  <p>FAA-aware aerial coverage for hospitality and events.</p>
+ <ul class="service-deliverables">
+ <li>4K cinema drone motion &amp; high-res overhead stills</li>
+ <li>Waterfront, resort, marina &amp; property flyovers</li>
+ <li>Outdoor festival, day-club &amp; coastal perspectives</li>
+ <li>Standalone aerial reels or hero-film integration</li>
+ </ul>
  </div>
  <div class="service-card" id="service-post">
+ <div class="service-card__head">
+ <span class="service-reel">REEL 06</span>
+ <span class="service-status">[ IN HOUSE ]</span>
+ </div>
  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4v16h16"/><path d="M8 15l3-4 3 3 4-6"/></svg>
  <h3>Post-Production</h3>
  <p>Editing, color, sound design, and delivery formatted for every platform you need.</p>
+ <ul class="service-deliverables">
+ <li>Rhythm-driven editorial &amp; beat-matched social cuts</li>
+ <li>35mm-inspired cinema color grading &amp; look development</li>
+ <li>Dialogue cleanup, sound design &amp; loudness mastering</li>
+ <li>Platform-ready masters for web, IG, TikTok &amp; OTT</li>
+ </ul>
  </div>
  </div>
  </div>
@@ -208,6 +325,115 @@
  </div>
  </section>
 
+ <!-- Interactive Scope Builder -->
+ <section class="section shoot-builder-section" id="shoot-builder">
+ <div class="container">
+ <div class="section-head reveal">
+ <span class="eyebrow">Scene 04 // Interactive Production Slate</span>
+ <h2>Build your shoot.</h2>
+ <p class="shoot-builder-intro">Toggle the deliverables you need for your next project. Your live production slate updates on the right and pre-fills our project inquiry form in one click.</p>
+ </div>
+
+ <div class="shoot-builder reveal" data-shoot-builder>
+ <div class="shoot-builder__controls">
+ <div class="shoot-builder__bar">
+ <span class="shoot-builder__bar-label">SELECT DELIVERABLES</span>
+ <div class="shoot-builder__presets">
+ <button type="button" class="slate-preset-btn" data-slate-action="full">Select All</button>
+ <button type="button" class="slate-preset-btn" data-slate-action="reset">Clear</button>
+ </div>
+ </div>
+
+ <div class="scope-options" role="group" aria-label="Deliverable options">
+ <button type="button" class="scope-option is-selected" data-scope-id="hero-film" aria-pressed="true">
+ <span class="scope-option__check" aria-hidden="true">[ &check; ]</span>
+ <span class="scope-option__body">
+ <span class="scope-option__title">Hero Brand Film (16:9 Flagship)</span>
+ <span class="scope-option__meta">REEL 01 &middot; 2&ndash;3 min cinematic story for web, hero banners &amp; press kits</span>
+ </span>
+ </button>
+
+ <button type="button" class="scope-option is-selected" data-scope-id="social-cutdowns" aria-pressed="true">
+ <span class="scope-option__check" aria-hidden="true">[ &check; ]</span>
+ <span class="scope-option__body">
+ <span class="scope-option__title">Vertical Social Cutdowns (Reels / TikTok Pack)</span>
+ <span class="scope-option__meta">REEL 03 &middot; 3&ndash;5 beat-matched 9:16 vertical edits built to hook fast</span>
+ </span>
+ </button>
+
+ <button type="button" class="scope-option" data-scope-id="photography" aria-pressed="false">
+ <span class="scope-option__check" aria-hidden="true">[ + ]</span>
+ <span class="scope-option__body">
+ <span class="scope-option__title">Lifestyle &amp; Brand Photography Set</span>
+ <span class="scope-option__meta">REEL 04 &middot; Graded high-res stills of space, plates, cocktails &amp; people</span>
+ </span>
+ </button>
+
+ <button type="button" class="scope-option" data-scope-id="event-recap" aria-pressed="false">
+ <span class="scope-option__check" aria-hidden="true">[ + ]</span>
+ <span class="scope-option__body">
+ <span class="scope-option__title">Nightlife / Event Recap Reel (Next-Day Option)</span>
+ <span class="scope-option__meta">REEL 03 &middot; High-energy crowd &amp; stage coverage with 24&ndash;48 hr turnaround</span>
+ </span>
+ </button>
+
+ <button type="button" class="scope-option" data-scope-id="aerial-drone" aria-pressed="false">
+ <span class="scope-option__check" aria-hidden="true">[ + ]</span>
+ <span class="scope-option__body">
+ <span class="scope-option__title">FAA-Aware Aerial &amp; Drone Cinema</span>
+ <span class="scope-option__meta">REEL 05 &middot; 4K coastal, property &amp; rooftop motion + overhead stills</span>
+ </span>
+ </button>
+
+ <button type="button" class="scope-option" data-scope-id="post-production" aria-pressed="false">
+ <span class="scope-option__check" aria-hidden="true">[ + ]</span>
+ <span class="scope-option__body">
+ <span class="scope-option__title">Full Post-Production, Color &amp; Sound Mix</span>
+ <span class="scope-option__meta">REEL 06 &middot; Editorial assembly, 35mm color grade, custom audio &amp; multi-ratio masters</span>
+ </span>
+ </button>
+ </div>
+ </div>
+
+ <aside class="slate-summary" aria-live="polite">
+ <div class="slate-summary__stripes" aria-hidden="true"></div>
+ <div class="slate-summary__top">
+ <span class="slate-summary__tag">PRODUCTION SLATE SUMMARY</span>
+ <span class="slate-summary__count" data-slate-count>2 DELIVERABLES SELECTED</span>
+ </div>
+
+ <div class="slate-summary__specs">
+ <div>
+ <span class="slate-spec__label">Est. Shoot Footprint</span>
+ <strong class="slate-spec__value" data-slate-footprint>1-Day Location Shoot &middot; Charleston, SC</strong>
+ </div>
+ <div>
+ <span class="slate-spec__label">Primary Format</span>
+ <strong class="slate-spec__value" data-slate-format>4K 24fps Cinema + 9:16 Social</strong>
+ </div>
+ </div>
+
+ <div class="slate-summary__list-wrap">
+ <span class="slate-spec__label">Included on Your Slate</span>
+ <ul class="slate-summary__list" data-slate-list>
+ <li>Flagship 16:9 hero brand film (2&ndash;3 min graded master)</li>
+ <li>Pre-shoot creative treatment &amp; shot list planning</li>
+ <li>3&ndash;5 vertical 9:16 social edits (7&ndash;30s) cut to the beat</li>
+ <li>Hook variations formatted for Reels, TikTok &amp; Shorts</li>
+ </ul>
+ </div>
+
+ <div class="slate-summary__footer">
+ <a href="contact.html?scope=hero-film%2Csocial-cutdowns" class="btn btn-primary slate-summary__cta" data-slate-cta>
+ Send This Slate to Cole <span class="btn-arrow">&rarr;</span>
+ </a>
+ <span class="slate-summary__note">Pre-fills the project form on the next screen &middot; Charleston &amp; Lowcountry</span>
+ </div>
+ </aside>
+ </div>
+ </div>
+ </section>
+
  <!-- CTA -->
  <section class="cta-banner">
  <div class="container reveal">
@@ -233,6 +459,7 @@
  <li><a href="index.html">Home</a></li>
  <li><a href="work.html">Work</a></li>
  <li><a href="about.html">About</a></li>
+ <li><a href="index.html#shoot-builder">Build a Shoot</a></li>
  <li><a href="contact.html">Contact</a></li>
  </ul>
  </div>
@@ -263,8 +490,8 @@
  </div>
  </footer>
 
- <script src="js/projects.js?v=6"></script>
- <script src="js/main.js?v=4"></script>
-  <script src="js/clapper.js?v=1" defer></script>
+ <script src="js/projects.js?v=8"></script>
+ <script src="js/main.js?v=8"></script>
+ <script src="js/clapper.js?v=8" defer></script>
 </body>
 </html>

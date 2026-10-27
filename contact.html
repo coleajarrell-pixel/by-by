@@ -4,12 +4,21 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Contact | By &amp; By Productions</title>
- <meta name="description" content="Start a project with By & By Productions, a media company based in Charleston, SC.">
+ <meta name="description" content="Start a project with By &amp; By Productions, a media company based in Charleston, SC.">
  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+ <meta property="og:title" content="Contact | By &amp; By Productions">
+ <meta property="og:description" content="Start a project with By &amp; By Productions, a media company based in Charleston, SC.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://coleajarrell-pixel.github.io/by-by/contact.html">
+ <meta property="og:image" content="https://coleajarrell-pixel.github.io/by-by/assets/work/video/biohakd-ad-1-poster.jpg">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Contact | By &amp; By Productions">
+ <meta name="twitter:description" content="Start a project with By &amp; By Productions, a media company based in Charleston, SC.">
+ <meta name="twitter:image" content="https://coleajarrell-pixel.github.io/by-by/assets/work/video/biohakd-ad-1-poster.jpg">
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="css/style.css?v=7">
+ <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="css/style.css?v=8">
 </head>
 <body>
 
@@ -45,10 +54,17 @@
  <section class="section">
  <div class="container contact-grid">
  <div class="reveal">
+ <div class="slate-prefill-banner" id="slate-prefill-banner" hidden>
+ <div class="slate-prefill-banner__head">
+ <span class="slate-prefill-banner__badge">&#9679; SLATE ATTACHED</span>
+ <a href="index.html#shoot-builder" class="slate-prefill-banner__edit">Modify Deliverables &rarr;</a>
+ </div>
+ <p class="slate-prefill-banner__text" data-prefill-summary>Your selected deliverables have been loaded into the project message below.</p>
+ </div>
  <!-- Contact form posts via FormSubmit (works on GitHub Pages).
  First submission may ask Cole to confirm the email once. -->
  <form id="contact-form" name="contact" method="POST" action="https://formsubmit.co/coleajarrell@gmail.com">
- <input type="hidden" name="_subject" value="New project inquiry | By & By Productions">
+ <input type="hidden" name="_subject" value="New project inquiry | By &amp; By Productions">
  <input type="hidden" name="_captcha" value="false">
  <input type="hidden" name="_template" value="table">
  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -61,7 +77,10 @@
  <input type="email" id="email" name="email" placeholder="you@example.com" required>
  </div>
  <div class="form-row">
+ <div class="form-label-row">
  <label for="project-type">Project Type</label>
+ <a href="index.html#shoot-builder" class="form-scope-link">Use Scope Builder &rarr;</a>
+ </div>
  <select id="project-type" name="project-type">
  <option>Brand Film</option>
  <option>Documentary</option>
@@ -129,6 +148,7 @@
  <li><a href="index.html">Home</a></li>
  <li><a href="work.html">Work</a></li>
  <li><a href="about.html">About</a></li>
+ <li><a href="index.html#shoot-builder">Build a Shoot</a></li>
  <li><a href="contact.html">Contact</a></li>
  </ul>
  </div>
@@ -159,7 +179,7 @@
  </div>
  </footer>
 
- <script src="js/main.js?v=4"></script>
-  <script src="js/clapper.js?v=1" defer></script>
+ <script src="js/main.js?v=8"></script>
+ <script src="js/clapper.js?v=8" defer></script>
 </body>
 </html>
