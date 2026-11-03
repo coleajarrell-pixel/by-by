@@ -886,6 +886,10 @@ p {
   margin-bottom: 4px;
 }
 
+.team-card h3:last-child {
+  margin-bottom: 0;
+}
+
 .team-card p {
   font-size: 0.82rem;
   margin-bottom: 0;
