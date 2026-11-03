@@ -25,7 +25,7 @@
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
   var lines = [
-    'Every story has its time.',
+    'Shot sharp. Delivered fast.',
     'Quiet on set — this one\u2019s yours.',
     'Golden hour waits for no one.',
     'Rolling. Speed. Charleston.',
