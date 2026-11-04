@@ -2140,3 +2140,9 @@ body {
 @media (max-width: 600px) { .logo--img img { height: 38px; } }
 .logo--footer { flex-direction: column; align-items: flex-start; gap: 10px; line-height: 1.2; }
 .logo--footer img { height: 60px; }
+@media (min-width: 601px) {
+  .site-header { padding: 16px 0; }
+  .site-header.is-scrolled { padding: 10px 0; }
+  .site-header .logo--img img { height: 62px; }
+  .logo--footer img { height: 70px; }
+}
