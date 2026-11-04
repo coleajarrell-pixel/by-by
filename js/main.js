@@ -231,7 +231,7 @@ const SCOPE_CATALOG = {
     weight: 0.5,
     format: "9:16 Social Pack",
     deliverables: [
-      "3–5 vertical 9:16 social edits (7–30s) cut to the beat",
+      "Vertical 9:16 social edits",
       "Hook variations formatted for Reels, TikTok & Shorts"
     ]
   },
