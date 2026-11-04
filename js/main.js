@@ -200,9 +200,40 @@ if (contactForm) {
         status.classList.remove("success");
         status.classList.add("visible", "error");
       }
+      return;
     }
-    // If valid, the form submits normally to whatever backend is
-    // configured in contact.html (see the comment near the <form> tag).
+
+    // Valid: send to Web3Forms with fetch so visitors stay on the page.
+    e.preventDefault();
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const showStatus = (text, ok) => {
+      if (!status) return;
+      status.textContent = text;
+      status.classList.remove(ok ? "error" : "success");
+      status.classList.add("visible", ok ? "success" : "error");
+    };
+    if (btn) btn.disabled = true;
+    showStatus("Sending...", true);
+    fetch(contactForm.action, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: new FormData(contactForm),
+    })
+      .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
+      .then(({ ok, data }) => {
+        if (ok && data && data.success) {
+          showStatus("Thanks! We'll be in touch fast.", true);
+          contactForm.reset();
+        } else {
+          throw new Error((data && data.message) || "Submit failed");
+        }
+      })
+      .catch(() => {
+        showStatus("Sorry, something went wrong sending your message. Please try again in a moment.", false);
+      })
+      .finally(() => {
+        if (btn) btn.disabled = false;
+      });
   });
 }
 

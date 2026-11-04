@@ -66,13 +66,12 @@
  </div>
  <p class="slate-prefill-banner__text" data-prefill-summary>Your selected deliverables have been loaded into the project message below.</p>
  </div>
- <!-- Contact form posts via FormSubmit (works on GitHub Pages).
- First submission may ask Cole to confirm the email once. -->
- <form id="contact-form" name="contact" method="POST" action="https://formsubmit.co/coleajarrell@gmail.com">
- <input type="hidden" name="_subject" value="New project inquiry | By &amp; By Productions">
- <input type="hidden" name="_captcha" value="false">
- <input type="hidden" name="_template" value="table">
- <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+ <!-- Contact form posts via Web3Forms (submitted with fetch in js/main.js). -->
+ <form id="contact-form" name="contact" method="POST" action="https://api.web3forms.com/submit">
+ <input type="hidden" name="access_key" value="219865c5-600e-420d-9e36-7223a8d92aef">
+ <input type="hidden" name="subject" value="New project inquiry | By &amp; By Productions">
+ <input type="hidden" name="from_name" value="By &amp; By Website">
+ <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
  <div class="form-row">
  <label for="name">Name</label>
  <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -179,7 +178,7 @@
  </div>
  </footer>
 
- <script src="js/main.js?v=20"></script>
+ <script src="js/main.js?v=21"></script>
  <script src="js/clapper.js?v=19" defer></script>
 </body>
 </html>
