@@ -246,12 +246,12 @@ document.querySelectorAll("[data-year]").forEach((el) => {
 const SCOPE_CATALOG = {
   "hero-film": {
     id: "hero-film",
-    title: "Hero Brand Film (16:9 Flagship)",
+    title: "Hero Brand Film",
     projectType: "Brand Film",
     weight: 1.0,
     format: "4K 24fps Cinema",
     deliverables: [
-      "Flagship 16:9 hero brand film (2–3 min graded master)",
+      "Hero brand film (2–3 min graded master)",
       "Pre-shoot creative treatment & shot list planning"
     ]
   },
