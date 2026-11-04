@@ -2138,3 +2138,5 @@ body {
 .logo--img { display: inline-flex; align-items: center; line-height: 0; }
 .logo--img img { display: block; height: 50px; width: auto; }
 @media (max-width: 600px) { .logo--img img { height: 38px; } }
+.logo--footer { flex-direction: column; align-items: flex-start; gap: 10px; line-height: 1.2; }
+.logo--footer img { height: 60px; }
