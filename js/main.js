@@ -257,12 +257,12 @@ const SCOPE_CATALOG = {
   },
   "social-cutdowns": {
     id: "social-cutdowns",
-    title: "Vertical Social Cutdowns (Reels / TikTok Pack)",
+    title: "Vertical Social Films",
     projectType: "Commercial & Advertising",
     weight: 0.5,
     format: "9:16 Social Pack",
     deliverables: [
-      "Vertical 9:16 social edits",
+      "Vertical Social Films",
       "Hook variations formatted for Reels, TikTok & Shorts"
     ]
   },
