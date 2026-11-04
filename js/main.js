@@ -300,9 +300,9 @@ function computeSlateSummary(selectedIds) {
   if (count === 1 && items[0].id === "post-production") {
     footprint = "Remote Editorial & Finishing";
   } else if (totalWeight <= 0.5) {
-    footprint = "Half-Day Location Shoot · Charleston, SC";
+    footprint = "Half-Day Location Shoot";
   } else if (totalWeight <= 1.5) {
-    footprint = "1-Day Location Shoot · Charleston, SC";
+    footprint = "1-Day Location Shoot";
   } else if (totalWeight <= 2.5) {
     footprint = "1–2 Day Multi-Asset Shoot · Lowcountry";
   } else {
