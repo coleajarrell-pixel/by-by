@@ -2146,3 +2146,12 @@ body {
   .site-header .logo--img img { height: 62px; }
   .logo--footer img { height: 70px; }
 }
+
+/* Live-text logo matching original artwork (og/logo.html: 132px / 84px, opsz 144) */
+.logo.logo--text { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1; letter-spacing: 0; }
+.logo .logo-mark { display: flex; flex-direction: column; align-items: center; font-family: "Fraunces", Georgia, serif; font-size: 36px; font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0; font-optical-sizing: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; text-transform: none; }
+.logo .logo-mark .logo-w { font-family: inherit; font-size: 1em; font-weight: 600; font-style: normal; color: #332a1c; letter-spacing: -0.015em; line-height: 1; text-transform: none; margin: 0; }
+.logo .logo-mark .logo-p { font-family: inherit; font-size: 0.636em; font-weight: 500; font-style: italic; color: #a8532a; letter-spacing: 0; line-height: 1; margin-top: 0.076em; text-transform: none; }
+.logo--footer.logo--text { gap: 10px; line-height: 1.2; }
+.logo--footer .logo-mark { font-size: 41px; }
+@media (max-width: 600px) { .site-header .logo-mark { font-size: 22px; } .logo--footer .logo-mark { font-size: 36px; } }
