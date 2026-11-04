@@ -2130,3 +2130,6 @@ body {
     gap: 10px;
   }
 }
+
+/* REC / FPS indicator removed: keep booking tag on the right */
+.hero-finder-bar { justify-content: flex-end; }
