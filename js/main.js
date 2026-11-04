@@ -216,8 +216,8 @@ if (contactForm) {
     showStatus("Sending...", true);
     fetch(contactForm.action, {
       method: "POST",
-      headers: { Accept: "application/json" },
-      body: new FormData(contactForm),
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(Object.fromEntries(new FormData(contactForm))),
     })
       .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
       .then(({ ok, data }) => {
