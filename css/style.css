@@ -2133,3 +2133,8 @@ body {
 
 /* REC / FPS indicator removed: keep booking tag on the right */
 .hero-finder-bar { justify-content: flex-end; }
+
+/* Image logo in header */
+.logo--img { display: inline-flex; align-items: center; line-height: 0; }
+.logo--img img { display: block; height: 50px; width: auto; }
+@media (max-width: 600px) { .logo--img img { height: 38px; } }
