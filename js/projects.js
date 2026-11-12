@@ -54,7 +54,7 @@ const PROJECTS = [
     year: "2026",
     description: "Lifestyle photography at Blue Door, a Charleston drink and social bar.",
     featured: true,
-    image: "assets/work/bluedoor/bluedoor-1.jpg?v=3"
+    image: "assets/work/bluedoor/bluedoor-1.jpg?v=4"
   },
   {
     id: "groovers-charleston-1",
