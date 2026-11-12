@@ -722,22 +722,31 @@ p {
 /* ---------- client logo strip ---------- */
 
 .client-strip {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+  align-items: stretch;
 }
 
 .client-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: auto;
+  min-width: 0;
   height: 112px;
-  padding: 18px 22px;
+  padding: 16px 14px;
   background: #ffffff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
+}
+
+@media (max-width: 960px) {
+  .client-strip { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .client-strip { grid-template-columns: repeat(2, 1fr); }
 }
 
 .client-card--dark {
@@ -745,19 +754,14 @@ p {
   border-color: var(--color-text);
 }
 
-.client-card img {
+.client-card img,
+.client-card--mark img {
   width: 100%;
   height: 100%;
-  max-width: 140px;
-  max-height: 58px;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   object-position: center;
-}
-
-/* Square / tall marks (BioHAKD, Trio) need a taller fill to match wordmarks */
-.client-card--mark img {
-  max-width: 100px;
-  max-height: 100px;
 }
 
 /* ---------- testimonial ---------- */
