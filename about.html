@@ -23,7 +23,7 @@
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="css/style.css?v=28">
+ <link rel="stylesheet" href="css/style.css?v=29">
 </head>
 <body>
 
@@ -56,16 +56,21 @@
  </div>
  </section>
 
- <section class="section about-story">
- <div class="about-story__bg" aria-hidden="true">
- <img src="assets/work/about/behind-the-scenes.jpg" alt="">
+ <section class="section home-about">
+ <div class="home-about__bg" aria-hidden="true">
+ <video class="home-about__video" autoplay muted loop playsinline preload="metadata">
+ <source src="assets/work/charleston/charleston-loop.webm?v=2" type="video/webm">
+ <source src="assets/work/charleston/charleston-loop.mp4?v=2" type="video/mp4">
+ </video>
  </div>
- <div class="container about-story__content reveal">
+ <div class="container home-about__content">
+ <div class="reveal" style="max-width: 720px;">
  <span class="eyebrow">Our Story</span>
  <h2>Why "by and by"?</h2>
  <p>It's an old Lowcountry phrase, a Southern way of saying <em>soon</em>. We built a media company around that promise: storytelling that never gets forced into a template, and content that's back in your hands quickly.</p>
  <p>Every project starts with listening. We get to know the people behind a brand, a place, or a cause up front, so the story comes across on screen and the edit moves fast.</p>
  <p>We're based in Charleston, SC, and work wherever the job takes us: on the water, in the kitchen, behind the bar, wherever the story actually lives.</p>
+ </div>
  </div>
  </section>
 
@@ -151,7 +156,7 @@
  </div>
  </footer>
 
- <script src="js/main.js?v=27"></script>
+ <script src="js/main.js?v=28"></script>
  <script src="js/clapper.js?v=19" defer></script>
 </body>
 </html>

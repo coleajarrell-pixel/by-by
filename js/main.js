@@ -426,18 +426,20 @@ if (contactForm && window.location.search) {
   }
 }
 
-// Homepage About background loop: honor reduced-motion (poster only, no autoplay)
+// Background film loop (homepage About teaser and About story): honor reduced-motion (plain cream, no still)
 (function () {
-  const reel = document.querySelector(".home-about__video");
-  if (!reel) return;
+  const reels = document.querySelectorAll(".home-about__video");
+  if (!reels.length) return;
   const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const syncReel = () => {
-    if (motion.matches) {
-      reel.pause();
-      reel.removeAttribute("autoplay");
-    } else if (reel.paused) {
-      reel.play().catch(() => {});
-    }
+    reels.forEach((reel) => {
+      if (motion.matches) {
+        reel.pause();
+        reel.removeAttribute("autoplay");
+      } else if (reel.paused) {
+        reel.play().catch(() => {});
+      }
+    });
   };
   syncReel();
   if (motion.addEventListener) {
