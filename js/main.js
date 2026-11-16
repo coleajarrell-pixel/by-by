@@ -426,9 +426,9 @@ if (contactForm && window.location.search) {
   }
 }
 
-// Homepage film strip: honor reduced-motion (poster only, no autoplay)
+// Homepage About background loop: honor reduced-motion (poster only, no autoplay)
 (function () {
-  const reel = document.querySelector(".home-reel__video");
+  const reel = document.querySelector(".home-about__video");
   if (!reel) return;
   const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const syncReel = () => {
