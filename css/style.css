@@ -409,6 +409,50 @@ p {
   align-items: center;
 }
 
+
+/* Drone photo sits behind the About story copy at low opacity */
+.about-story {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-story__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-story__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  /* Was fully opaque (1) in the side-by-side visual-block; faded so story text stays readable */
+  opacity: 0.22;
+  display: block;
+}
+
+.about-story__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Cream wash over the faded aerial so type stays clear; image remains faintly visible */
+  background: linear-gradient(
+    180deg,
+    rgba(243, 236, 221, 0.42) 0%,
+    rgba(243, 236, 221, 0.58) 50%,
+    rgba(243, 236, 221, 0.70) 100%
+  );
+}
+
+.about-story__content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+
 @media (max-width: 800px) {
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
 }
@@ -1283,7 +1327,7 @@ body.film-open {
    1. Hero Camera-Finder Status Bar
    2. Tactile Chapter Directory Grid
    3. Numbered Reel Capabilities Cards + Deliverable Lists
-   4. Interactive "Build Your Shoot" Scope Builder + Contact Prefill
+   4. Contact form slate prefill
    ========================================================================== */
 
 /* ---------- 1. Hero Camera-Finder Status Bar ---------- */
@@ -1528,318 +1572,6 @@ body.film-open {
   font-size: 0.8rem;
 }
 
-/* ---------- 4. Interactive "Build Your Shoot" Scope Builder ---------- */
-#shoot-builder {
-  scroll-margin-top: 96px;
-}
-
-.shoot-builder-intro {
-  max-width: 580px;
-  font-size: 1.02rem;
-  margin-bottom: 0;
-}
-
-.shoot-builder {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 36px;
-  align-items: start;
-}
-
-@media (max-width: 920px) {
-  .shoot-builder {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
-
-.shoot-builder__controls {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: 28px;
-  box-shadow: 0 14px 32px rgba(51, 42, 28, 0.06);
-}
-
-@media (max-width: 600px) {
-  .shoot-builder__controls {
-    padding: 20px 16px;
-  }
-}
-
-.shoot-builder__bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding-bottom: 16px;
-  margin-bottom: 18px;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.shoot-builder__bar-label {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-.shoot-builder__presets {
-  display: flex;
-  gap: 8px;
-}
-
-.slate-preset-btn {
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: transparent;
-  border: 1px solid var(--color-border);
-  color: var(--color-text-muted);
-  padding: 5px 10px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all var(--transition);
-}
-
-.slate-preset-btn:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-
-.scope-options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.scope-option {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  text-align: left;
-  padding: 15px 16px;
-  border-radius: var(--radius);
-  border: 1px solid var(--color-border);
-  background: var(--color-bg);
-  color: var(--color-text);
-  cursor: pointer;
-  font-family: var(--font-body);
-  transition: all 180ms ease;
-}
-
-.scope-option:hover {
-  border-color: var(--color-accent);
-  background: #fffdf8;
-}
-
-.scope-option:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
-.scope-option.is-selected {
-  background: #fffdf8;
-  border-color: var(--color-accent);
-  box-shadow: inset 3px 0 0 var(--color-accent), 0 6px 16px rgba(168, 83, 42, 0.08);
-}
-
-.scope-option__check {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--color-text-muted);
-  white-space: nowrap;
-  padding-top: 2px;
-  min-width: 44px;
-  transition: color 180ms ease;
-}
-
-.scope-option.is-selected .scope-option__check {
-  color: var(--color-accent);
-}
-
-.scope-option__body {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.scope-option__title {
-  font-family: var(--font-display);
-  font-size: 1.02rem;
-  font-weight: 600;
-  color: var(--color-text);
-  line-height: 1.25;
-}
-
-.scope-option__meta {
-  font-family: var(--font-mono);
-  font-size: 0.67rem;
-  letter-spacing: 0.04em;
-  color: var(--color-text-muted);
-  line-height: 1.45;
-}
-
-/* Slate Summary Panel */
-.slate-summary {
-  background: var(--color-text);
-  color: var(--color-on-dark);
-  border-radius: 6px;
-  padding: 28px;
-  box-shadow: 0 22px 48px rgba(51, 42, 28, 0.22);
-  position: sticky;
-  top: 96px;
-  overflow: hidden;
-  border: 1px solid rgba(243, 236, 221, 0.14);
-}
-
-@media (max-width: 600px) {
-  .slate-summary {
-    padding: 22px 18px;
-    position: static;
-  }
-}
-
-.slate-summary__stripes {
-  height: 10px;
-  margin: -28px -28px 22px;
-  background: repeating-linear-gradient(
-    -45deg,
-    #f3ecdd 0 14px,
-    #332a1c 14px 28px
-  );
-  border-bottom: 1px solid rgba(243, 236, 221, 0.2);
-}
-
-@media (max-width: 600px) {
-  .slate-summary__stripes {
-    margin: -22px -18px 18px;
-  }
-}
-
-.slate-summary__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(243, 236, 221, 0.16);
-  margin-bottom: 18px;
-}
-
-.slate-summary__tag {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-on-dark-muted);
-}
-
-.slate-summary__count {
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #332a1c;
-  background: var(--color-accent-soft);
-  padding: 4px 10px;
-  border-radius: 999px;
-}
-
-.slate-summary__specs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  padding-bottom: 18px;
-  margin-bottom: 18px;
-  border-bottom: 1px solid rgba(243, 236, 221, 0.16);
-}
-
-@media (max-width: 480px) {
-  .slate-summary__specs {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-}
-
-.slate-spec__label {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-on-dark-muted);
-  margin-bottom: 5px;
-}
-
-.slate-spec__value {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 0.96rem;
-  font-weight: 500;
-  color: var(--color-on-dark);
-  line-height: 1.35;
-}
-
-.slate-summary__list {
-  list-style: none;
-  margin: 10px 0 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.slate-summary__list li {
-  position: relative;
-  padding-left: 18px;
-  font-size: 0.85rem;
-  line-height: 1.45;
-  color: var(--color-on-dark);
-}
-
-.slate-summary__list li::before {
-  content: "\2713";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--color-accent-soft);
-  font-family: var(--font-mono);
-  font-weight: 600;
-}
-
-.slate-summary__footer {
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(243, 236, 221, 0.16);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.slate-summary__cta {
-  width: 100%;
-  justify-content: center;
-  font-size: 0.92rem;
-}
-
-.slate-summary__note {
-  font-family: var(--font-mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.08em;
-  text-align: center;
-  color: var(--color-on-dark-muted);
-}
-
 /* ---------- Contact Page Slate Prefill ---------- */
 .slate-prefill-banner {
   background: #fffdf8;
@@ -1873,48 +1605,10 @@ body.film-open {
   color: var(--color-accent);
 }
 
-.slate-prefill-banner__edit {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.slate-prefill-banner__edit:hover {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-}
-
 .slate-prefill-banner__text {
   font-size: 0.88rem;
   color: var(--color-text);
   margin: 0;
-}
-
-.form-label-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 8px;
-}
-
-.form-label-row label {
-  margin-bottom: 0;
-}
-
-.form-scope-link {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
-.form-scope-link:hover {
-  text-decoration: underline;
 }
 
 /* ---------- Custom 35mm Cinema Camera Cursor ---------- */
@@ -1932,8 +1626,6 @@ a,
 button,
 [role="button"],
 .btn,
-.scope-option,
-.slate-preset-btn,
 .filter-btn,
 .chapter-card,
 .project-card.is-video,

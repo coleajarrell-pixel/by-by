@@ -242,7 +242,7 @@ document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-// ---------- Interactive "Build Your Shoot" Scope Builder & Contact Prefill ----------
+// ---------- Contact form ?scope= prefill (legacy Scope Builder links still work) ----------
 const SCOPE_CATALOG = {
   "hero-film": {
     id: "hero-film",
@@ -371,65 +371,6 @@ function computeSlateSummary(selectedIds) {
     projectType,
     href: `contact.html?scope=${scopeParam}`
   };
-}
-
-const shootBuilder = document.querySelector("[data-shoot-builder]");
-if (shootBuilder) {
-  const optionButtons = Array.from(shootBuilder.querySelectorAll(".scope-option"));
-  const countEl = shootBuilder.querySelector("[data-slate-count]");
-  const footprintEl = shootBuilder.querySelector("[data-slate-footprint]");
-  const formatEl = shootBuilder.querySelector("[data-slate-format]");
-  const listEl = shootBuilder.querySelector("[data-slate-list]");
-  const ctaEl = shootBuilder.querySelector("[data-slate-cta]");
-
-  function syncBuilderUI() {
-    const selectedIds = [];
-    optionButtons.forEach((btn) => {
-      const isSelected = btn.classList.contains("is-selected");
-      btn.setAttribute("aria-pressed", isSelected ? "true" : "false");
-      const checkEl = btn.querySelector(".scope-option__check");
-      if (checkEl) {
-        checkEl.textContent = isSelected ? "[ \u2713 ]" : "[ + ]";
-      }
-      if (isSelected) {
-        selectedIds.push(btn.getAttribute("data-scope-id"));
-      }
-    });
-
-    const summary = computeSlateSummary(selectedIds);
-    if (countEl) countEl.textContent = summary.countLabel;
-    if (footprintEl) footprintEl.textContent = summary.footprint;
-    if (formatEl) formatEl.textContent = summary.format;
-    if (listEl) {
-      listEl.innerHTML = summary.bullets.map((b) => `<li>${b}</li>`).join("");
-    }
-    if (ctaEl) {
-      ctaEl.setAttribute("href", summary.href);
-    }
-  }
-
-  optionButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.classList.toggle("is-selected");
-      syncBuilderUI();
-    });
-  });
-
-  shootBuilder.querySelectorAll("[data-slate-action]").forEach((presetBtn) => {
-    presetBtn.addEventListener("click", () => {
-      const action = presetBtn.getAttribute("data-slate-action");
-      optionButtons.forEach((btn) => {
-        if (action === "full") {
-          btn.classList.add("is-selected");
-        } else {
-          btn.classList.remove("is-selected");
-        }
-      });
-      syncBuilderUI();
-    });
-  });
-
-  syncBuilderUI();
 }
 
 // Prefill contact.html when ?scope=... is present in the URL
