@@ -426,23 +426,52 @@ if (contactForm && window.location.search) {
   }
 }
 
-// Background film loop (homepage About teaser and About story): honor reduced-motion (plain cream, no still)
+// Background film loop (homepage About teaser and About story): force muted autoplay, including iOS
 (function () {
   const reels = document.querySelectorAll(".home-about__video");
   if (!reels.length) return;
-  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const syncReel = () => {
-    reels.forEach((reel) => {
-      if (motion.matches) {
-        reel.pause();
-        reel.removeAttribute("autoplay");
-      } else if (reel.paused) {
-        reel.play().catch(() => {});
-      }
-    });
+
+  const tryPlay = (video) => {
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute("muted", "");
+    video.playsInline = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {});
+    }
   };
-  syncReel();
-  if (motion.addEventListener) {
-    motion.addEventListener("change", syncReel);
+
+  const tryPlayAll = () => {
+    reels.forEach(tryPlay);
+  };
+
+  reels.forEach((video) => {
+    tryPlay(video);
+    ["loadeddata", "canplay", "canplaythrough"].forEach((evt) => {
+      video.addEventListener(evt, () => tryPlay(video));
+    });
+  });
+
+  if (document.readyState === "complete") {
+    tryPlayAll();
+  } else {
+    window.addEventListener("load", tryPlayAll);
   }
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) tryPlay(entry.target);
+      });
+    }, { threshold: 0.15 });
+    reels.forEach((video) => io.observe(video));
+  }
+
+  const unlock = () => tryPlayAll();
+  ["touchstart", "scroll", "click"].forEach((evt) => {
+    window.addEventListener(evt, unlock, { passive: true });
+  });
 })();

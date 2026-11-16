@@ -1859,8 +1859,3 @@ body {
   z-index: 1;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .home-about__video {
-    display: none;
-  }
-}
