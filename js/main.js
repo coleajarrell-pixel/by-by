@@ -279,7 +279,7 @@ const SCOPE_CATALOG = {
   },
   "event-recap": {
     id: "event-recap",
-    title: "Nightlife / Event Recap Reel (Next-Day Option)",
+    title: "Event Recap Reel (Next-Day Option)",
     projectType: "Commercial & Advertising",
     weight: 0.5,
     format: "Next-Day Event Recap",

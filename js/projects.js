@@ -74,18 +74,18 @@ const PROJECTS = [
     category: "Events",
     tag: "Photo",
     year: "2026",
-    description: "DJ and nightlife event coverage at Trio in Charleston.",
+    description: "DJ and event coverage at Trio in Charleston.",
     featured: true,
     image: "assets/work/trio/trio-2.jpg"
   },
   {
     id: "groovers-charlotte-1",
     title: "Groovers Listening Bar (Charlotte)",
-    client: "Charlotte, NC nightlife event photography",
+    client: "Charlotte, NC event photography",
     category: "Events",
     tag: "Photo",
     year: "2026",
-    description: "Nightlife event coverage at Groovers Listening Bar's Charlotte location.",
+    description: "Event coverage at Groovers Listening Bar's Charlotte location.",
     featured: true,
     image: "assets/work/groovers-charlotte/groovers-charlotte-2.jpg"
   },
@@ -96,7 +96,7 @@ const PROJECTS = [
     category: "Events",
     tag: "Photo",
     year: "2026",
-    description: "DJ and nightlife event coverage at Trio in Charlotte.",
+    description: "DJ and event coverage at Trio in Charlotte.",
     featured: true,
     image: "assets/work/trio-charlotte/trio-charlotte-1.jpg"
   }
