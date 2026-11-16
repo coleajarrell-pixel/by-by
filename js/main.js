@@ -425,3 +425,22 @@ if (contactForm && window.location.search) {
     }
   }
 }
+
+// Homepage film strip: honor reduced-motion (poster only, no autoplay)
+(function () {
+  const reel = document.querySelector(".home-reel__video");
+  if (!reel) return;
+  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const syncReel = () => {
+    if (motion.matches) {
+      reel.pause();
+      reel.removeAttribute("autoplay");
+    } else if (reel.paused) {
+      reel.play().catch(() => {});
+    }
+  };
+  syncReel();
+  if (motion.addEventListener) {
+    motion.addEventListener("change", syncReel);
+  }
+})();

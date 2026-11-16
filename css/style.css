@@ -1851,3 +1851,54 @@ body {
 .logo--footer.logo--text { gap: 10px; line-height: 1.2; }
 .logo--footer .logo-mark { font-size: 41px; }
 @media (max-width: 600px) { .site-header .logo-mark { font-size: 22px; } .logo--footer .logo-mark { font-size: 36px; } }
+
+/* ---------- Homepage Charleston film strip ---------- */
+.home-reel {
+  position: relative;
+  background: #2a2318;
+  border-top: 1px solid rgba(168, 83, 42, 0.2);
+  border-bottom: 1px solid rgba(168, 83, 42, 0.2);
+}
+
+.home-reel__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+}
+
+.home-reel__poster,
+.home-reel__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  display: block;
+}
+
+.home-reel__video {
+  z-index: 1;
+}
+
+.home-reel__frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: inset 0 0 72px rgba(38, 31, 21, 0.22);
+}
+
+@media (max-width: 700px) {
+  .home-reel__frame {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-reel__video {
+    display: none;
+  }
+}
